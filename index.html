@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Psicóloga Amanda Dualattka - Atendimento Online</title>
+  <meta name="description" content="Atendimento psicológico online voltado à saúde emocional da mulher. Um espaço de escuta, cuidado e reflexão.">
+  
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #296B6B;
+      --primary-soft: #e3f0f0;
+      --primary-softer: #f3f8f8;
+      --primary-dark: #1f5555;
+
+      --bg: #f5f7f7;
+      --text: #22333b;
+      --muted: #5f6b73;
+      --card: #ffffff;
+      --border: #d0dde3;
+      --radius-lg: 1.5rem;
+      --shadow-soft: 0 18px 35px rgba(32, 58, 67, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 1.25rem 0rem 3rem;
+    }
+
+    /* ============ NAVBAR ============ */
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(245, 247, 247, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(208, 221, 227, 0.8);
+    }
+
+    .nav-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0.6rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 2px solid var(--primary-soft);
+      background: #fff;
+    }
+
+    .brand-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .brand-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      color: var(--primary-dark);
+    }
+
+    .brand-sub {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-dark);
+      border-color: rgba(41, 107, 107, 0.2);
+      background: var(--primary-softer);
+    }
+
+    .nav-cta {
+      font-size: 0.8rem;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--primary);
+      background: var(--primary);
+      color: #f7fafb;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 10px 20px rgba(41, 107, 107, 0.25);
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 16px 28px rgba(41, 107, 107, 0.32);
+    }
+
+    .nav-burger {
+      display: none;
+    }
+
+    .nav-links-mobile {
+      display: none;
+    }
+
+    /* ============ HERO (DESKTOP) ============ */
+
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      margin-bottom: 0;
+
+      background-image: url("amanda-hero.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      border-radius: 0;
+      overflow: hidden;
+      min-height: 430px;
+      padding: 2.5rem 5rem 3.5rem;
+    }
+
+    .hero-content {
+      max-width: 520px;
+      padding: 1.5rem 1.75rem 2rem;
+      border-radius: 1.2rem;
+      background: rgba(0, 0, 0, 0.35);
+      color: #fff;
+    }
+
+    @keyframes heroSlideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .hero-title {
+      font-size: clamp(2.6rem, 4vw, 3.3rem);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.6rem;
+      color: var(--primary);
+
+      opacity: 0;
+      transform: translateX(-40px);
+      animation: heroSlideIn 0.7s ease-out forwards;
+      animation-delay: 0.1s;
+    }
+
+    .hero-subtitle-main {
+      font-size: 1.15rem;
+      margin-bottom: 0.9rem;
+      opacity: 0;
+      transform: translateX(-40px);
+      animation: heroSlideIn 0.7s ease-out forwards;
+      animation-delay: 0.25s;
+    }
+
+    .hero-subtitle-extra {
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+      opacity: 0;
+      transform: translateX(-40px);
+      animation: heroSlideIn 0.7s ease-out forwards;
+      animation-delay: 0.4s;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      opacity: 0;
+      transform: translateX(-40px);
+      animation: heroSlideIn 0.7s ease-out forwards;
+      animation-delay: 0.7s;
+      margin-bottom: 1.6rem; /* espaço acima do botão */
+    }
+
+    .hero-meta span {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: #e2e8f0;
+    }
+
+    .hero-meta-value {
+      font-weight: 500;
+      margin-top: 0.1rem;
+      color: #ffffff;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.8rem;
+      opacity: 0;
+      transform: translateX(-40px);
+      animation: heroSlideIn 0.7s ease-out forwards;
+      animation-delay: 1s;
+    }
+
+    .btn-primary {
+      padding: 0.7rem 1.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--primary);
+      background: var(--primary);
+      color: #f7fafb;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 12px 26px rgba(41, 107, 107, 0.3);
+      transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 18px 32px rgba(41, 107, 107, 0.35);
+    }
+
+    /* ============ SEÇÕES GENÉRICAS ============ */
+    
+    /* Tirar o espaço reto entre as seções que têm onda */
+    #inicio,
+    #sobre,
+    #minha-abordagem,
+    #caminho-terapeutico,
+    #temas,
+    #blog,
+    #duvidas,
+    #contato {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    section {
+      padding: 0rem 0rem;
+      margin-bottom: 3rem;
+    }
+
+    #sobre {
+      background-image: linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)),url("fundo_sobre_mim.png");
+      background-repeat: repeat;
+      background-size: 300px;
+      background-color: #ffffff;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 2rem 5rem 3.5rem;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 1rem;
+      color: #7a8a96;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      color: var(--primary-dark);
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      width: 100%;
+      margin-bottom: 1.4rem;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 1.3fr);
+      gap: 2rem;
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: transparent;
+      padding: 1.4rem 1rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    #sobre .card {
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      border-radius: 0;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.7rem;
+      color: var(--primary-dark);
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .sobre-photo {
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .sobre-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .tema-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    /* Cards de temas */
+    .tema-item {
+      border-radius: 1.1rem;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      padding: 1.4rem 1.3rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      box-shadow: 0 8px 18px rgba(28, 57, 66, 0.08);
+    }
+
+    /* Ícone de imagem no topo do card */
+    .tema-item-icon {
+      width: 40px;          /* tamanho do ícone */
+      height: 40px;
+      object-fit: contain;  /* não distorce a imagem */
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .tema-item strong {
+      color: var(--primary-dark);
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+    }
+
+    .temas-btn-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;   /* espaço acima do botão */
+      margin-bottom: 2rem; /* espaço abaixo, antes do próximo bloco */
+    }
+
+    /* ============ SOBRE MIM – AÇÕES (WHATS / INSTA) ============ */
+
+    .sobre-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .sobre-actions .icon {
+      width: 1.3rem;
+      height: 1.3rem;
+      margin-right: 0.5rem;
+    }
+
+    .btn-whats-full {
+      background: var(--primary);
+      border-color: var(--primary-dark);
+      border: 1px solid #1a9e4c;
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.95rem;
+      box-shadow: 0 12px 26px rgba(41, 107, 107, 0.3);
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-whats-full .icon {
+      width: 25px;
+      height: auto;
+      flex-shrink: 0;
+      fill: white;
+      color: white;
+    }
+
+    .btn-whats-full:hover {
+      background: #1a9e4c;
+    }
+
+    .btn-instagram-full {
+      background: white;
+      border: 1px solid var(--primary);
+      color: var(--primary-dark);
+      padding: 0.8rem 1.8rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.95rem;
+      box-shadow: 0 12px 26px rgba(41, 107, 107, 0.15);
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    /* AJUSTE DO ÍCONE DO INSTAGRAM – VOLTAR AO TAMANHO/COR ANTERIORES */
+    .btn-instagram-full .icon {
+      width: 25px;
+      height: 25px;
+      flex-shrink: 0;
+      fill: var(--primary-dark);
+      color: var(--primary-dark);
+    }
+
+    .btn-instagram-full:hover {
+      background: var(--primary-soft);
+      border-color: var(--primary-dark);
+    }
+
+    /* ============ MINHA ABORDAGEM ============ */
+
+    #minha-abordagem {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 2rem 5rem 3.5rem;
+      position: relative;
+      background: var(--primary);
+    }
+
+    /* Textos FORA do card em branco */
+    #minha-abordagem .section-kicker,
+    #minha-abordagem .section-title,
+    #minha-abordagem .section-sub {
+      color: #ffffff;
+    }
+
+    #minha-abordagem .card {
+      background: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.35); /* bem suave, pode pôr 'none' se quiser sem borda */
+    }
+
+    #minha-abordagem::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -60px;              /* puxa a onda para cima, encaixando na seção anterior */
+      height: 80px;            /* mesma altura do SVG */
+      background-image: url("onda-top-verde.svg");
+      background-repeat: repeat-x;
+      background-size: 120px 80px;  /* pode ajustar para a onda ficar mais larga/estreita */
+      pointer-events: none;
+    }
+
+    /* ============ CAMINHO TERAPÊUTICO ============ */
+
+    #caminho-terapeutico {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      background: 
+        url("fundo_caminho2.png") repeat,
+        #7b5a46;
+      background-size: 300px; /* igual ao sobre mim, ajuste se quiser */
+      padding: 3rem 5rem 4rem;
+      color: #ffffff;
+      position: relative;  
+    }
+
+    /* animação de baixo para cima nesse bloco */
+    #caminho-terapeutico.reveal-up {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 0.9s ease;
+    }
+
+    #caminho-terapeutico.reveal-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #caminho-terapeutico .section-kicker,
+    #caminho-terapeutico .section-title,
+    #caminho-terapeutico .section-sub,
+    #caminho-terapeutico h3,
+    #caminho-terapeutico p,
+    #caminho-terapeutico li {
+      color: #ffffff;
+    }
+
+    /* Onda entre 'minha abordagem' (branco) e 'caminho terapêutico' (marrom) */
+    #caminho-terapeutico::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -10px;                      /* sobe a onda por cima da seção de cima */
+      height: 60px;                    /* mesma altura do SVG */
+      background-image: url("onda-top-verde.svg");
+      background-repeat: repeat-x;
+      background-size: 120px 60px;     /* largura/altura do SVG */
+      pointer-events: none;
+      transform: scaleY(-1);
+    }
+
+    .caminho-grid {
+      display: grid;
+      /* foto só o tamanho que precisar, texto ocupa o resto */
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 3fr);
+      gap: 2.5rem;
+      margin-top: 2.2rem;
+      align-items: flex-start;
+    }
+
+    .caminho-photo {
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      max-width: auto;
+      max-height: auto;           /* aqui você regula o tamanho da foto */
+    }
+
+    /* IMPORTANTE: tirar o width: 40% e voltar ao 100% */
+    .caminho-photo img {
+      width: auto;
+      height: auto;
+      object-fit: contain;   /* não corta a foto */
+    }
+
+    .caminho-text h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .caminho-text p {
+      margin-bottom: 0.9rem;
+      font-size: 0.98rem;
+    }
+
+    .caminho-text ul {
+      padding-left: 1.1rem;
+      font-size: 0.95rem;
+    }
+
+    /* wrapper para centralizar */
+    .caminho-btn-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    /* botão igual o do hero */
+    .btn-whats {
+      background: #1d8f87;
+      color: white;
+      padding: 0.7rem 2rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 1.25rem;
+      box-shadow: 0 12px 26px rgba(29, 143, 135, 0.3);
+      transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
+      text-decoration: none;
+    }
+
+    .btn-whats:hover {
+      background: #166d68;
+      transform: translateY(-2px);
+      box-shadow: 0 18px 32px rgba(29, 143, 135, 0.35);
+    }
+
+    .btn-whats .icon {
+      width: 25px;
+      height: auto;
+      flex-shrink: 0;
+      fill: #ffffff;
+      color: #ffffff;
+    }
+
+
+    /* ============ TEMAS (COM CARD MOVIDO) ============ */
+
+    #temas {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 0.5rem 5rem 3.5rem;
+      position: relative;
+    }
+
+    #temas::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -60px;                      /* encosta na base do bloco marrom */
+      height: 60px;                    /* mesma altura que usamos antes */
+      background-image: url("onda-top-branca.svg");
+      background-repeat: repeat-x;
+      background-size: 120px 60px;
+      pointer-events: none;
+      color: #ffffff;
+    }
+
+    .temas-card {
+      border-radius: 1.5rem;
+      padding: 1.6rem 1.7rem;
+      margin-bottom: 2rem;
+      background: #7b5a46;
+      color: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .temas-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .temas-card p {
+      margin-bottom: 0.7rem;
+      font-size: 0.95rem;
+    }
+
+    /* ============ CONTATO ============ */
+
+    .contato-card {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 1.5rem;
+      border-radius: 1.7rem;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #ffffff, #edf5f4);
+      padding: 1.6rem 1.7rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contato-info p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .contato-list {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contato-list dt {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #7a8a96;
+      margin-top: 0.6rem;
+    }
+
+    .contato-list dd {
+      margin-left: 0;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .contato-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      justify-content: center;
+    }
+
+    .contato-actions small {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .btn-whatsapp {
+      padding: 0.7rem 1.1rem;
+      border-radius: 999px; 
+      border: none;
+      background: var(--primary);
+      border-color: var(--primary-dark);
+      color: #f9fafb;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 14px 26px rgba(34, 197, 94, 0.4);
+      cursor: pointer;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .btn-secondary {
+      padding: 0.6rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: #ffffff;
+      color: var(--muted);
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary-soft);
+      border-color: rgba(41, 107, 107, 0.4);
+      color: var(--primary-dark);
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px dashed rgba(172, 185, 192, 0.9);
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    /* ============ ANIMAÇÕES GERAIS (REVEAL) ============ */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-60px);
+      transition: all 0.9s ease;
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(60px);
+      transition: all 0.9s ease;
+    }
+
+    .reveal.show,
+    .reveal-left.show,
+    .reveal-right.show {
+      opacity: 1;
+      transform: translateX(0) translateY(0);
+    }
+
+    /* ============ MOBILE ============ */
+
+    @media (max-width: 768px) {
+      .nav-inner {
+        padding-inline: 1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-burger {
+        display: inline-flex;
+        border-radius: 999px;
+        border: 1px solid rgba(172, 185, 192, 0.9);
+        background: #ffffff;
+        padding: 0.3rem 0.7rem;
+        font-size: 0.8rem;
+        color: var(--muted);
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      .nav-links-mobile {
+        display: none;
+        flex-direction: column;
+        padding: 0.5rem 1.5rem 0.75rem;
+        gap: 0.4rem;
+        font-size: 0.85rem;
+        background: #f9fbfb;
+        border-top: 1px solid rgba(208, 221, 227, 0.9);
+      }
+
+      .nav-links-mobile a {
+        padding: 0.4rem 0.25rem;
+        border-radius: 0.6rem;
+      }
+
+      .nav-links-mobile.show {
+        display: flex;
+      }
+
+      .page {
+        padding-inline: 1.25rem;
+      }
+
+      .hero {
+        padding: 4.5rem 1.2rem 2.4rem;
+        min-height: 520px;
+        background-image: url("amanda_cadeira.jpg"); /* HERO MOBILE DIFERENTE */
+        background-position: center;
+      }
+
+      .hero-content {
+        /*background: transparent;
+        padding: 0;*/
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      .hero-title {
+        font-size: 2.1rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .hero-subtitle-main {
+        font-size: 1rem;
+      }
+
+      .hero-subtitle-extra {
+        font-size: 0.9rem;  /* texto menor no mobile */
+      }
+
+      .hero-meta {
+        font-size: 0.8rem;
+      }
+
+      .hero-meta-label {
+        font-size: 0.75rem;
+      }
+
+      .hero-actions {
+        margin-top: 0.8rem;
+      }
+
+      .btn-primary {
+        white-space: nowrap;       
+        font-size: 1rem;          
+        padding: 0.9rem 0.5rem;     
+      }
+
+      /* SOBRE AÇÕES – botões empilhados no mobile */
+      .sobre-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .sobre-actions a {
+        width: 100%;
+        justify-content: center;
+      }
+
+      #sobre {
+        padding: 2rem 1.5rem 3rem;
+      }
+
+      .section-grid,
+      .contato-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .banner-borboletas img {
+        height: 160px;
+      }
+
+      #caminho-terapeutico {
+        padding: 2.4rem 1.5rem 3rem;
+      }
+
+      .caminho-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .caminho-photo {
+        max-height: 360px;
+      }
+
+      #minha-abordagem {
+        padding: 2rem 1.5rem 3rem;
+      }
+
+      .abordagem-btn-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 3.5rem;
+        margin-bottom: 2rem;
+      }
+
+      #temas {
+        padding: 0 1.25rem;
+      }
+
+      #temas .caminho-btn-wrapper {
+        margin-bottom: 2.5rem; /* ou 3rem se quiser mais espaço */
+      }
+    }
+
+    /* ====== BLOG (fundo marrom) ====== */
+    #blog {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      background: 
+        url("fundo_caminho2.png") repeat,
+        #7b5a46;
+      background-size: 300px;
+      color: #ffffff;
+      padding: 3rem 5rem 4rem;
+      position: relative;
+    }
+
+    #blog .section-kicker,
+    #blog .section-title,
+    #blog .section-sub {
+      color: #ffffff;
+    }
+
+    /* ============ DÚVIDAS (FAQ) ============ */
+
+    #duvidas {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 3rem 5rem 4rem;
+      background: var(--primary); /* verdinho de fundo */
+    }
+
+    .faq-wrapper {
+      max-width: 980px;
+      margin: 0 auto;
+      background: transparent;
+      border-radius: 1.8rem;
+      padding: 2.2rem 2.5rem 2.5rem;
+      border: 1px solid #ffffff;
+      box-shadow: 0 18px 35px rgba(32, 58, 67, 0.08);
+    }
+
+    .faq-wrapper .section-kicker {
+      margin-bottom: 0.4rem;
+      color: #ffffff;
+    }
+
+    .faq-wrapper .section-title {
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+    }
+
+    /* Lista de perguntas */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      color: #ffffff;
+    }
+
+    .faq-question-btn {
+      width: 100%;
+      border: none;
+      background: transparent;
+      padding: 0.9rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 1rem;
+      color: var(--primary-dark);
+      cursor: pointer;
+      text-align: left;
+      color: #ffffff;
+    }
+
+    .faq-question-btn:hover {
+      color: var(--primary-soft);
+      /*color: #f5f7f7;*/
+    }
+
+    .faq-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      line-height: 1;
+      color: #ffffff; /* rosinha do + */
+      flex-shrink: 0;
+    }
+
+    /* estado aberto */
+    .faq-question-btn.open .faq-icon {
+      background: transparent;
+      color: #ffffff;
+    }
+
+    /* Área da resposta (abre/fecha) */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+      padding-left: 2.2rem; /* alinhado com o texto da pergunta */
+      font-size: 0.95rem;
+      color: var(--primary-soft);
+    }
+
+    .faq-answer p {
+      margin-bottom: 0.9rem;
+    }
+
+    /* quando aberta */
+    .faq-answer.open {
+      opacity: 1;
+      margin-bottom: 0.6rem;
+    }
+
+    /* separador entre itens */
+    .faq-item-wrapper {
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      padding-top: 0.5rem;
+    }
+    .faq-item-wrapper:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    @media (max-width: 768px) {
+      #duvidas {
+        padding: 2.4rem 1.5rem 3rem;
+      }
+
+      .faq-wrapper {
+        padding: 1.8rem 1.5rem 2rem;
+      }
+    }
+
+    /* --- layout de 2 colunas para o bloco de dúvidas --- */
+    .duvidas-container {
+      max-width: 1400px;
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 3rem;
+    }
+
+    /* Coluna da esquerda = FAQ */
+    .duvidas-left {
+      flex: 1.4; /* maior */
+    }
+
+    /* Coluna da direita = frase + botão */
+    .duvidas-right {
+      flex: 1;
+      color: #ffffff;
+      padding-top: 1rem;
+    }
+
+    .duvidas-right h3 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+    }
+
+    .duvidas-right .whats-btn {
+      background: #0FA98F;
+      color: white;
+      padding: 1rem 1.8rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .duvidas-right .whats-btn:hover {
+      background: #0c8f78;
+      transform: translateY(-2px);
+    }
+
+    .whats-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .duvidas-container {
+        flex-direction: column;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-avatar">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format%3Dauto%2Cw%3D375%2Ch%3D437%2Cfit%3Dcrop/AE07nznKKEtn3JQX/whatsapp-image-2025-10-08-at-20.34.25-m6L275ywR8uD6O9q.jpeg" alt="Amanda Dualattka" />
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Amanda Dualattka</span>
+          <span class="brand-sub">Psicóloga · CRP 06/215804</span>
+        </div>
+      </div>
+
+      <!-- Menu desktop -->
+      <div class="nav-links">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#minha-abordagem">Minha abordagem</a>
+        <a href="#caminho-terapeutico">Caminho terapêutico</a>
+        <a href="#temas">Temas</a>
+        <a href="#blog">Blog</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#contato">Contato</a>
+      </div>
+
+      <!-- Botão mobile -->
+      <button class="nav-burger" type="button" id="burger">
+        ☰ Menu
+      </button>
+
+      <!-- CTA desktop -->
+      <a href="https://wa.me/5516992752424?text=Ol%C3%A1%2C+gostaria+de+saber+um+pouco+mais+sobre+o+atendimento+psicol%C3%B3gico+on-line." class="nav-cta">
+        Vamos conversar 💬
+      </a>
+    </div>
+
+    <!-- Menu mobile -->
+    <div class="nav-links-mobile" id="mobileMenu">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#minha-abordagem">Minha abordagem</a>
+      <a href="#caminho-terapeutico">Caminho terapêutico</a>
+      <a href="#temas">Temas</a>
+      <a href="#blog">Blog</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Vamos juntas?</h1>
+      <p class="hero-subtitle-main">
+        Construir um espaço onde a vida possa fazer mais sentido.
+      </p>
+      <p class="hero-subtitle-extra">
+        Um lugar calmo, em que você possa chegar inteira, com suas perguntas,
+        dores e desejos. Um espaço de escuta e reflexão, em que cuidar também significa ajudar
+        você a se reencontrar.
+      </p>
+
+      <div class="hero-meta">
+        <span>
+          <span class="hero-meta-label">Atendimento</span>
+          <span class="hero-meta-value">On-line</span>
+        </span>
+        <span>
+          <span class="hero-meta-label">Abordagem</span>
+          <span class="hero-meta-value">Psicóloga clínica · Psicanálise</span>
+        </span>
+        <span>
+          <span class="hero-meta-label">Foco</span>
+          <span class="hero-meta-value">Suporte emocional da mulher</span>
+        </span>
+      </div>
+
+      <div class="hero-actions">
+        <a href="https://wa.me/5516992752424?text=Ol%C3%A1%2C+gostaria+de+saber+um+pouco+mais+sobre+o+atendimento+psicol%C3%B3gico+on-line." class="btn-primary">
+          Vamos agendar uma conversa
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main class="page">
+    <!-- SOBRE MIM -->
+    <section id="sobre">
+      <p class="section-kicker reveal-left">Sobre mim</p>
+      <h2 class="section-title reveal-left">Quem sou eu na sua caminhada de cuidado</h2>
+      <p class="section-sub reveal-left">
+        Olá, meu nome é Amanda, sou psicóloga e psicanalista, e acompanho mulheres que buscam uma vida que valha a pena ser vivida. 
+        Realizo atendimentos exclusivamente online, oferecendo um espaço de escuta e reflexão, onde é possível olhar para o que dói com cuidado e afeto.
+      </p>
+
+      <div class="section-grid">
+        <div class="card reveal-right">
+          <h3>Um pouco da minha história</h3>
+          <p>
+            Sonho com essa profissão desde os meus 11 anos, antes mesmo de entender o que isso significava.
+          </p>
+          <p>
+            Aos 15, eu acreditava profundamente nas pessoas, na vida e na possibilidade de encontrar sentido mesmo nas pequenas coisas.
+          </p>
+          <p>
+            Via o mundo com olhos de caleidoscópio, como se algo maior colorisse a existência, mesmo quando tudo parecia cinza.
+          </p>
+          <p>
+            Com o tempo, vivi experiências que me afastaram daquela menina de 11 anos e daquela garota de 15.
+          </p>
+          <p>
+            Em certos momentos, me formar parecia um sonho distante; mas a ideia de desistir do que sempre desejei era ainda mais insuportável.
+          </p>
+          <p>  
+            Foi nesse percurso, entre quedas e recomeços, que encontrei, na psicologia e na psicanálise, uma forma de continuar acreditando.
+          </p>
+          <p>
+            Hoje, compreendo que cuidar é também ajudar o outro a reencontrar suas próprias cores.
+          </p>
+          <p>
+            <b>É o que faço todos os dias: escutar com cuidado, presença e afeto, 
+            ajudando cada mulher que chega até mim a reconhecer, dentro de si, o brilho dos seus próprios olhos de caleidoscópio.</b>
+          </p>
+
+          <div class="sobre-actions reveal-left">
+            <!-- Botão WhatsApp -->
+            <a
+              href="https://wa.me/5516992752424?text=Ol%C3%A1%2C+gostaria+de+saber+um+pouco+mais+sobre+o+atendimento+psicol%C3%B3gico+on-line."
+              class="btn-whats-full"
+              target="_blank"
+            >
+              <svg aria-hidden="true" class="icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                <path 
+                  d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+              </svg>
+              Agende uma consulta
+            </a>
+
+            <!-- Botão Instagram -->
+            <a
+              href="https://www.instagram.com/psiamanda.dualattka"
+              class="btn-instagram-full"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="icon" viewBox="0 0 448 512">
+                <path fill="currentColor"
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+              </svg>
+              Conheça o meu trabalho
+            </a>
+          </div>
+        </div>
+
+        <div class="sobre-photo reveal-left">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format%3Dauto%2Cw%3D768%2Ch%3D1065%2Cfit%3Dcrop/AE07nznKKEtn3JQX/whatsapp-image-2025-10-08-at-20.34.25-m6L275ywR8uD6O9q.jpeg" alt="Amanda Dualattka entre livros" />
+        </div>
+      </div>
+    </section>
+    
+    <!-- MINHA ABORDAGEM -->
+    <section id="minha-abordagem">
+      <p class="section-kicker reveal-left">Minha abordagem</p>
+      <h2 class="section-title reveal-left">Psicanálise como caminho de cuidado</h2>
+      <p class="section-sub reveal-left">
+        Trabalho a partir da psicanálise, entendendo que cada história é única e não cabe em respostas prontas.
+        Em sessão, o foco não é “consertar” alguém, mas criar um espaço onde você possa falar livremente,
+        inclusive sobre aquilo que, muitas vezes, não encontra lugar em outros contextos.
+      </p>
+      <div class="card reveal-right">
+        <h3>O que isso significa na prática?</h3>
+        <p>
+          Na psicanálise, cada palavra importa. O que você traz — seus sofrimentos, dúvidas, repetições,
+          memórias e desejos — é acolhido com cuidado e sigilo, para que, aos poucos, possamos compreender
+          o que está em jogo na sua maneira de viver e se relacionar.
+        </p>
+        <p>
+          Não se trata de receber conselhos prontos, mas de construir, juntas, novas possibilidades
+          de olhar para a sua história e de se posicionar diante da vida.
+        </p>
+      </div>
+      <div class="caminho-btn-wrapper reveal-left">
+        <a
+              href="https://www.instagram.com/psiamanda.dualattka"
+              class="btn-instagram-full"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="icon" viewBox="0 0 448 512">
+                <path fill="currentColor"
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+              </svg>
+              Venha me conhecer
+            </a>
+          </div>
+        </div>
+    </section>
+
+    <!-- CAMINHO TERAPÊUTICO -->
+    <section id="caminho-terapeutico" class="reveal-up">
+      <p class="section-kicker">Caminho terapêutico</p>
+      <h2 class="section-title">Como posso te acompanhar nesse processo</h2>
+      <p class="section-sub">
+        A psicoterapia é um caminho honesto para cuidar da vida psíquica, ajudando a ligar experiências, sentimentos e histórias que nem sempre fazem sentido de imediato.
+      </p>
+
+      <div class="caminho-grid">
+        <div class="caminho-photo">
+          <img src="amanda_caminho.jpg" alt="Amanda Dualattka sentada em uma cadeira" />
+        </div>
+
+        <div class="caminho-text">
+          <h3>O espaço da psicoterapia</h3>
+          <p>
+            Em vez de prometer soluções rápidas, esse espaço se abre para que você possa falar sobre o que tem sido difícil, sobre o que dói e sobre aquilo que volta a se repetir na sua vida e você já não quer mais viver sozinha.
+          </p>
+          <p>
+            Com o tempo, o que antes parecia apenas sofrimento ganha palavras, contornos e novos sentidos. O trabalho é ir, pouco a pouco, construindo jeitos mais cuidadosos de estar consigo e com o mundo.
+          </p>
+
+          <h3>Na prática, como funciona</h3>
+          <p>De forma geral, o acompanhamento acontece assim:</p>
+          <ul>
+            <li>Atendimento individual on-line para mulheres adultas;</li>
+            <li>Sessões semanais, com horário reservado;</li>
+            <li>Encontros por vídeo, em ambiente sigiloso e acolhedor;</li>
+            <li>Um primeiro contato para tirar dúvidas e alinhar expectativas.</li>
+          </ul>
+          <div class="caminho-btn-wrapper">
+            <a href="https://wa.me/5516992752424?text=Ol%C3%A1%2C+gostaria+de+saber+um+pouco+mais+sobre+o+atendimento+psicol%C3%B3gico+on-line." 
+            target="_blank" 
+            class="btn-whats">
+              <svg aria-hidden="true" class="icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                <path 
+                  d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+              </svg>
+              Agende uma consulta
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEMAS -->
+    <section id="temas" class="reveal-right">
+      <p class="section-kicker">Alguns temas de trabalho</p>
+      <h2 class="section-title">Questões que podem aparecer por aqui</h2>
+      <p class="section-sub">
+        A lista não esgota tudo o que pode ser trazido para a terapia,
+        mas pode ajudar você a se reconhecer em alguns pontos.
+      </p>
+
+      <!-- Card movido do bloco Caminho terapêutico -->
+      <div class="temas-card">
+        <h3>Temas que atravessam a clínica</h3>
+        <p>
+          No dia a dia com mulheres, aparecem questões ligadas a relacionamentos,
+          vínculos, autoestima, histórias de infância e tantas outras experiências
+          que, às vezes, são vividas em silêncio.
+        </p>
+        <p>
+          A ideia é que, aqui, essas histórias possam ser escutadas com atenção,
+          cuidado e responsabilidade clínica, para que não precisem mais ser
+          carregadas sozinhas.
+        </p>
+      </div>
+
+      <div class="tema-grid">
+        <div class="tema-item">
+          <img
+            src="tema-relacionamentos.png"
+            alt="Ícone de relacionamentos"
+            class="tema-item-icon"
+          >
+          <strong>Relacionamentos e vínculos</strong>
+          Dinâmicas afetivas, dificuldade de colocar limites,
+          relações que machucam, medo de ficar só.
+        </div>
+        <div class="tema-item">
+          <img
+            src="tema-autoestima.png"
+            alt="Ícone de relacionamentos"
+            class="tema-item-icon"
+          >
+          <strong>Autoestima e autopercepção</strong>
+          Sentimentos de inadequação, autoexigência, comparação constante,
+          dificuldade em reconhecer o próprio valor.
+        </div>
+        <div class="tema-item">
+          <img
+            src="tema-ansiedade.png"
+            alt="Ícone de relacionamentos"
+            class="tema-item-icon"
+          >
+          <strong>Ansiedade, angústia e vazio</strong>
+          Preocupações intensas, sensação de estar sempre devendo algo,
+          dificuldade em descansar por dentro.
+        </div>
+        <div class="tema-item">
+          <img
+            src="tema-luto.png"
+            alt="Ícone de relacionamentos"
+            class="tema-item-icon"
+          >
+          <strong>Luto e perdas</strong>
+          Encerramentos de ciclos, mudanças importantes,
+          experiências de separação e perdas simbólicas.
+        </div>
+        <div class="tema-item">
+          <img
+            src="tema-infancia.png"
+            alt="Ícone de relacionamentos"
+            class="tema-item-icon"
+          >
+          <strong>Infância e família</strong>
+          Histórias de infância emocionalmente negligenciada,
+          lares marcados por críticas constantes ou pouco acolhimento.
+        </div>
+        <div class="tema-item">
+          <img
+            src="tema-carreira.png"
+            alt="Ícone de relacionamentos"
+            class="tema-item-icon"
+          >
+          <strong>Carreira e projetos de vida</strong>
+          Dúvidas sobre caminhos profissionais, sensação de estar perdida,
+          dificuldade em se apropriar do que se deseja para si.
+        </div>
+      </div>
+      <div class="caminho-btn-wrapper">
+        <a href="https://wa.me/5516992752424?text=Ol%C3%A1%2C+gostaria+de+saber+um+pouco+mais+sobre+o+atendimento+psicol%C3%B3gico+on-line." 
+        target="_blank" 
+        class="btn-whats">
+          <svg aria-hidden="true" class="icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+            <path 
+              d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+          </svg>
+          Se identificou com algum tema?
+        </a>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog">
+      <p class="section-kicker reveal-left">Blog</p>
+      <h2 class="section-title reveal-left">Textos para seguir pensando</h2>
+      <p class="section-sub reveal-left">
+        Aqui podem aparecer reflexões sobre temas que atravessam a clínica: relacionamentos,
+        autocuidado, limites, sofrimento psíquico, entre outros. Mesmo que você ainda não esteja em terapia,
+        pode ser um ponto de encontro com questões importantes da vida emocional.
+      </p>
+    </section>
+
+    <!-- DÚVIDAS -->
+    <section id="duvidas">
+      <div class="duvidas-container">
+
+          <!-- COLUNA DA ESQUERDA -->
+          <div class="duvidas-left">
+            <div class="faq-wrapper reveal">
+              <p class="section-kicker">Dúvidas frequentes</p>
+              <h2 class="section-title">Perguntas que podem surgir antes de começar</h2>
+
+              <div class="faq-list">
+
+                <div class="faq-item-wrapper">
+                  <button class="faq-question-btn" type="button">
+                    <span class="faq-icon">+</span>
+                    <span>Preciso saber exatamente o que dizer na primeira sessão?</span>
+                  </button>
+                  <div class="faq-answer">
+                    <p>
+                      Não. Você não precisa chegar pronta, com tudo organizado...
+                    </p>
+                  </div>
+                </div>
+
+                <div class="faq-item-wrapper">
+                  <button class="faq-question-btn" type="button">
+                    <span class="faq-icon">+</span>
+                    <span>Quanto tempo dura o processo?</span>
+                  </button>
+                  <div class="faq-answer">
+                    <p>Não há um tempo fechado...</p>
+                  </div>
+                </div>
+
+                <div class="faq-item-wrapper">
+                  <button class="faq-question-btn" type="button">
+                    <span class="faq-icon">+</span>
+                    <span>Como funciona o atendimento on-line?</span>
+                  </button>
+                  <div class="faq-answer">
+                    <p>O atendimento acontece por videochamada...</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- COLUNA DA DIREITA -->
+          <div class="duvidas-right reveal-right">
+
+            <h3>Ficou alguma dúvida?</h3>
+
+            <a href="https://wa.me/5516992752424?text=Ol%C3%A1%2C+gostaria+de+saber+um+pouco+mais+sobre+o+atendimento+psicol%C3%B3gico+on-line." 
+        target="_blank" 
+        class="btn-whats">
+          <svg aria-hidden="true" class="icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+            <path 
+              d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+          </svg>
+          Me chame para esclarecermos
+        </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+      <p class="section-kicker">Contato</p>
+      <h2 class="section-title">Se você sentiu que algo daqui te toca</h2>
+
+      <div class="contato-card">
+        <div class="contato-info">
+          <p>
+            Se em algum ponto você se reconheceu nas palavras ou temas que aparecem aqui,
+            podemos conversar com calma sobre a possibilidade de acompanhamento.
+          </p>
+          <p>
+            O primeiro contato pode ser apenas para tirar dúvidas e entender melhor como
+            o processo funciona. Você não precisa chegar pronta, só precisa chegar como está.
+          </p>
+          <dl class="contato-list">
+            <dt>WhatsApp</dt>
+            <dd>
+              <span>📞</span>
+              <span>+55 (16) 99275-2424</span>
+            </dd>
+            <dt>Instagram</dt>
+            <dd>
+              <span>📷</span>
+              <a href="https://www.instagram.com/psiamanda.dualattka" target="_blank" rel="noopener noreferrer">
+                @psiamanda.dualattka
+              </a>
+            </dd>
+          </dl>
+        </div>
+        <div class="contato-actions">
+          <a
+            href="https://wa.me/5516992752424?text=Ol%C3%A1%2C+gostaria+de+saber+um+pouco+mais+sobre+o+atendimento+psicol%C3%B3gico+on-line."
+            class="btn-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>💚</span>
+            Enviar uma mensagem pelo WhatsApp
+          </a>
+          <a href="https://www.instagram.com/psiamanda.dualattka" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+            Ver conteúdos no Instagram
+          </a>
+          <small>
+            Atendimento psicológico comprometido com o bem-estar psíquico da mulher,
+            com sigilo e responsabilidade ética.
+          </small>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2025 Amanda Dualattka · Psicóloga e Psicanalista · CRP 06/215804</span>
+      <span>Atendimento on-line voltado ao cuidado da mulher.</span>
+    </footer>
+  </main>
+
+  <script>
+    // Menu mobile
+    const burger = document.getElementById("burger");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    burger?.addEventListener("click", () => {
+      mobileMenu.classList.toggle("show");
+    });
+
+    // Scroll suave para âncoras
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const targetId = link.getAttribute("href");
+        if (!targetId || targetId === "#") return;
+        const target = document.querySelector(targetId);
+        if (!target) return;
+        e.preventDefault();
+        mobileMenu?.classList.remove("show");
+        window.scrollTo({
+          top: target.offsetTop - 80,
+          behavior: "smooth",
+        });
+      });
+    });
+
+    // Animações de scroll (inclui reveal-up)
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-up");
+
+      function revealOnScroll() {
+        const trigger = window.innerHeight * 0.80;
+
+        elements.forEach(el => {
+          const top = el.getBoundingClientRect().top;
+          if (top < trigger) el.classList.add("show");
+        });
+      }
+
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
+    });
+
+        // FAQ (Dúvidas) - abre/fecha respostas
+        const faqButtons = document.querySelectorAll(".faq-question-btn");
+
+        faqButtons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const alreadyOpen = btn.classList.contains("open");
+
+            // fecha tudo
+            faqButtons.forEach((b) => {
+              b.classList.remove("open");
+              const ans = b.nextElementSibling;
+              if (ans && ans.classList.contains("faq-answer")) {
+                ans.classList.remove("open");
+                ans.style.maxHeight = null;
+                const icon = b.querySelector(".faq-icon");
+                if (icon) icon.textContent = "+";
+              }
+            });
+
+            // se o clicado não estava aberto, abre
+            if (!alreadyOpen) {
+              btn.classList.add("open");
+              const answer = btn.nextElementSibling;
+              if (answer && answer.classList.contains("faq-answer")) {
+                answer.classList.add("open");
+                answer.style.maxHeight = answer.scrollHeight + "px";
+                const icon = btn.querySelector(".faq-icon");
+                if (icon) icon.textContent = "–";
+              }
+            }
+          }); 
+        });
+
+  </script>
+</body>
+</html>

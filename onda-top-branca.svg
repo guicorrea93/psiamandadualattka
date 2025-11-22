@@ -1,0 +1,12 @@
+<svg width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- fundo transparente -->
+  <rect width="120" height="60" fill="none" />
+  <!-- onda branca que “entra” no marrom -->
+  <path d="
+    M0,40
+    C 20,20 40,60 60,40
+    C 80,20 100,60 120,40
+    L120,60
+    L0,60
+    Z" fill="#ffffff"/>
+</svg>
