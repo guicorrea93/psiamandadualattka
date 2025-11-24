@@ -57,6 +57,60 @@
       padding: 1.25rem 0rem 3rem;
     }
 
+        /* ============ BOTÃO FLUTUANTE WHATSAPP ============ */
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2.5rem;
+      right: 2.5rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25D366; /* verde clássico do WhatsApp */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+      z-index: 50;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .whatsapp-float:hover {
+      background: #1ebe5d;
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3);
+    }
+
+    .whatsapp-float svg {
+      width: 40px;
+      height: 40px;
+      fill: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      .whatsapp-float {
+        bottom: 1rem;
+        right: 1rem;
+        width: 54px;
+        height: 54px;
+      }
+
+      .whatsapp-float svg {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+  /* Faz o bloco contato ocupar a tela toda */
+      #contato {
+        padding: 2rem 1.5rem 3rem;  /* diminui laterais */
+      }
+    }
+
+
     /* ============ NAVBAR ============ */
 
     .nav {
@@ -74,8 +128,8 @@
       padding: 0.6rem 1.5rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+      justify-content: flex-start;
+      gap: 5rem;
     }
 
     .brand {
@@ -120,7 +174,7 @@
     .nav-links {
       display: flex;
       gap: 0.6rem;
-      font-size: 0.85rem;
+      font-size: 1rem;
       color: var(--muted);
     }
 
@@ -720,6 +774,14 @@
 
     /* ============ CONTATO ============ */
 
+    #contato {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 0.5rem 5rem 3.5rem;
+      margin-top: 2rem;  /* 🔥 afastamento do bloco Dúvidas */
+    }
+
     .contato-card {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
@@ -1198,6 +1260,20 @@
       }
     }
 
+    .contato-list .icon.contato-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      top: 2px;
+    }
+
+    /* Ajuste fino do alinhamento do ícone do Instagram no bloco Contato */
+    .contato-list svg.icon-instagram {
+      position: relative;
+      top: 25px;   /* ajuste de alinhamento vertical – pode aumentar p/ 3 se quiser */
+    }
+
+
   </style>
 </head>
 <body>
@@ -1221,7 +1297,7 @@
         <a href="#minha-abordagem">Minha abordagem</a>
         <a href="#caminho-terapeutico">Caminho terapêutico</a>
         <a href="#temas">Temas</a>
-        <a href="#blog">Blog</a>
+        <!--<a href="#blog">Blog</a>-->
         <a href="#duvidas">Dúvidas</a>
         <a href="#contato">Contato</a>
       </div>
@@ -1232,10 +1308,10 @@
       </button>
 
       <!-- CTA desktop -->
-      <a href="https://wa.me/5516992752424?text=Ol%C3%A1%2C+gostaria+de+saber+um+pouco+mais+sobre+o+atendimento+psicol%C3%B3gico+on-line." class="nav-cta">
+      <!--<a href="https://wa.me/5516992752424?text=Ol%C3%A1%2C+gostaria+de+saber+um+pouco+mais+sobre+o+atendimento+psicol%C3%B3gico+on-line." class="nav-cta">
         Vamos conversar 💬
       </a>
-    </div>
+    </div>-->
 
     <!-- Menu mobile -->
     <div class="nav-links-mobile" id="mobileMenu">
@@ -1244,7 +1320,7 @@
       <a href="#minha-abordagem">Minha abordagem</a>
       <a href="#caminho-terapeutico">Caminho terapêutico</a>
       <a href="#temas">Temas</a>
-      <a href="#blog">Blog</a>
+      <!--<a href="#blog">Blog</a>-->
       <a href="#duvidas">Dúvidas</a>
       <a href="#contato">Contato</a>
     </div>
@@ -1255,12 +1331,10 @@
     <div class="hero-content">
       <h1 class="hero-title">Vamos juntas?</h1>
       <p class="hero-subtitle-main">
-        Construir um espaço onde a vida possa fazer mais sentido.
+        Construir um espaço onde uma vida que valha a pena ser vivida se torne possível.
       </p>
       <p class="hero-subtitle-extra">
-        Um lugar calmo, em que você possa chegar inteira, com suas perguntas,
-        dores e desejos. Um espaço de escuta e reflexão, em que cuidar também significa ajudar
-        você a se reencontrar.
+        Minha prioridade é que você se sinta acolhida, segura e que possamos construir um relacionamento onde você sinta que pode sentir com amparo.
       </p>
 
       <div class="hero-meta">
@@ -1270,11 +1344,11 @@
         </span>
         <span>
           <span class="hero-meta-label">Abordagem</span>
-          <span class="hero-meta-value">Psicóloga clínica · Psicanálise</span>
+          <span class="hero-meta-value">Psicanálise</span>
         </span>
         <span>
           <span class="hero-meta-label">Foco</span>
-          <span class="hero-meta-value">Suporte emocional da mulher</span>
+          <span class="hero-meta-value">Acompanhar sua trajetória rumo a uma vida que valha a pena ser vivida.</span>
         </span>
       </div>
 
@@ -1290,12 +1364,14 @@
     <!-- SOBRE MIM -->
     <section id="sobre">
       <p class="section-kicker reveal-left">Sobre mim</p>
-      <h2 class="section-title reveal-left">Quem sou eu na sua caminhada de cuidado</h2>
+      <!--<h2 class="section-title reveal-left">Quem sou eu na sua caminhada de cuidado</h2>-->
       <p class="section-sub reveal-left">
-        Olá, meu nome é Amanda, sou psicóloga e psicanalista, e acompanho mulheres que buscam uma vida que valha a pena ser vivida. 
-        Realizo atendimentos exclusivamente online, oferecendo um espaço de escuta e reflexão, onde é possível olhar para o que dói com cuidado e afeto.
+        Olá, meu nome é Amanda, sou psicóloga e psicanalista, e acompanho mulheres que estão em busca de sentido.
+        Me encontro em especialização contínua em tudo o que envolve a vida psíquica da mulher nos dias de hoje. 
+        Atualmente, curso uma pós-graduação focada nisso e realizo outros diversos cursos, participações em grupos de estudos, entre outros eventos, 
+        para estar cada vez mais preparada para receber cada uma de vocês. Realizo atendimentos exclusivamente online, oferecendo um espaço de escuta e reflexão, 
+        onde é possível olhar para o que dói com cuidado e afeto.
       </p>
-
       <div class="section-grid">
         <div class="card reveal-right">
           <h3>Um pouco da minha história</h3>
@@ -1321,8 +1397,9 @@
             Hoje, compreendo que cuidar é também ajudar o outro a reencontrar suas próprias cores.
           </p>
           <p>
-            <b>É o que faço todos os dias: escutar com cuidado, presença e afeto, 
-            ajudando cada mulher que chega até mim a reconhecer, dentro de si, o brilho dos seus próprios olhos de caleidoscópio.</b>
+            <b>É o que faço todos os dias: 
+              escutar com cuidado, presença e afeto, ajudando cada mulher que chega até mim a reconhecer, dentro de si, 
+              o brilho dos seus próprios olhos de caleidoscópio.</b>
           </p>
 
           <div class="sobre-actions reveal-left">
@@ -1366,20 +1443,20 @@
       <p class="section-kicker reveal-left">Minha abordagem</p>
       <h2 class="section-title reveal-left">Psicanálise como caminho de cuidado</h2>
       <p class="section-sub reveal-left">
-        Trabalho a partir da psicanálise, entendendo que cada história é única e não cabe em respostas prontas.
-        Em sessão, o foco não é “consertar” alguém, mas criar um espaço onde você possa falar livremente,
-        inclusive sobre aquilo que, muitas vezes, não encontra lugar em outros contextos.
+        Trabalho com os olhos da psicanálise, entendendo que cada história é única e não cabe em respostas prontas. 
+        Em sessão, o foco não é “consertar” alguém, mas criar um espaço onde você possa falar livremente, 
+          inclusive sobre aquilo que muitas vezes não encontra lugar, espaço e segurança em outros contextos.
       </p>
       <div class="card reveal-right">
         <h3>O que isso significa na prática?</h3>
         <p>
-          Na psicanálise, cada palavra importa. O que você traz — seus sofrimentos, dúvidas, repetições,
-          memórias e desejos — é acolhido com cuidado e sigilo, para que, aos poucos, possamos compreender
-          o que está em jogo na sua maneira de viver e se relacionar.
+          Na análise, cada palavra importa. Cada uma das suas experiências, seus sofrimentos, dúvidas, angústias, tristezas, 
+          alegrias e desejos são acolhidos com cuidado, sigilo e um colo afetuoso para que, aos poucos, 
+          possamos compreender o que está em jogo na sua maneira de viver, se relacionar e sentir. 
         </p>
         <p>
-          Não se trata de receber conselhos prontos, mas de construir, juntas, novas possibilidades
-          de olhar para a sua história e de se posicionar diante da vida.
+          Não se trata de receber conselhos prontos ou fórmulas mágicas, mas de construir, juntas, 
+          novas possibilidades de olhar para a sua história e de ressignificar sua vivência, além de encontrar novas formas de se posicionar diante da vida.
         </p>
       </div>
       <div class="caminho-btn-wrapper reveal-left">
@@ -1396,15 +1473,21 @@
               Venha me conhecer
             </a>
           </div>
-        </div>
     </section>
 
     <!-- CAMINHO TERAPÊUTICO -->
     <section id="caminho-terapeutico" class="reveal-up">
       <p class="section-kicker">Caminho terapêutico</p>
-      <h2 class="section-title">Como posso te acompanhar nesse processo</h2>
+      <h2 class="section-title">Como posso te acompanhar nesse processo:</h2>
       <p class="section-sub">
-        A psicoterapia é um caminho honesto para cuidar da vida psíquica, ajudando a ligar experiências, sentimentos e histórias que nem sempre fazem sentido de imediato.
+        Muitas vezes, somos atravessadas por incertezas, dores, vazios e angústias que ultrapassam nosso entendimento sobre nós mesmas e sobre o sentido da existência.
+        A análise é um caminho honesto de encontro consigo mesma: um convite a olhar para o espelho subjetivo, a reconhecer os próprios impasses 
+        e a se conectar com sua essência de maneira mais autêntica e plena.
+      </p>
+      <p>
+        Estaremos juntas, olhando para tudo isso, atentas àquilo que precisa de contorno. Daremos, juntas, palavras para representar tudo o que você sente, 
+        e você não estará sozinha nessa jornada, o que vai dar a você o amparo que talvez você nunca tenha recebido em sua história de 
+        vida e que pode curar dores invisíveis e sofrimentos não vistos.
       </p>
 
       <div class="caminho-grid">
@@ -1413,22 +1496,20 @@
         </div>
 
         <div class="caminho-text">
-          <h3>O espaço da psicoterapia</h3>
+          <h3>O espaço da psicoterapia (Análise):</h3>
           <p>
-            Em vez de prometer soluções rápidas, esse espaço se abre para que você possa falar sobre o que tem sido difícil, sobre o que dói e sobre aquilo que volta a se repetir na sua vida e você já não quer mais viver sozinha.
+            Chamamos de setting analítico o espaço inconsciente que se constrói na relação entre psicólogo e paciente. 
+            Esse espaço, onde você poderá trazer tudo o que seu coração sentir que precisa de atenção, é reservado apenas a você.
           </p>
           <p>
-            Com o tempo, o que antes parecia apenas sofrimento ganha palavras, contornos e novos sentidos. O trabalho é ir, pouco a pouco, construindo jeitos mais cuidadosos de estar consigo e com o mundo.
+            Tudo o que conversarmos é estritamente sigiloso, algo que pode te deixar mais confortável do que em uma conversa com amigos, por exemplo.
+            Além de todo o repertório teórico que me acompanha, esse espaço é humano, onde iremos nos relacionar de forma humana, real e profunda.
           </p>
-
-          <h3>Na prática, como funciona</h3>
-          <p>De forma geral, o acompanhamento acontece assim:</p>
-          <ul>
-            <li>Atendimento individual on-line para mulheres adultas;</li>
-            <li>Sessões semanais, com horário reservado;</li>
-            <li>Encontros por vídeo, em ambiente sigiloso e acolhedor;</li>
-            <li>Um primeiro contato para tirar dúvidas e alinhar expectativas.</li>
-          </ul>
+          <p>
+            No espaço de análise, você poderá, talvez, reconstruir sua trajetória psíquica, entrando em contato e cuidando de questões muito primitivas, 
+            que você carrega desde muito pequena. E isso dará a você a oportunidade de preencher lacunas psíquicas que se registraram em seu inconsciente e 
+            impactam diretamente sua vida e sua forma de sentir e ser.
+          </p>
           <div class="caminho-btn-wrapper">
             <a href="https://wa.me/5516992752424?text=Ol%C3%A1%2C+gostaria+de+saber+um+pouco+mais+sobre+o+atendimento+psicol%C3%B3gico+on-line." 
             target="_blank" 
@@ -1437,7 +1518,7 @@
                 <path 
                   d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
               </svg>
-              Agende uma consulta
+              Agende um encontro
             </a>
           </div>
         </div>
@@ -1449,8 +1530,8 @@
       <p class="section-kicker">Alguns temas de trabalho</p>
       <h2 class="section-title">Questões que podem aparecer por aqui</h2>
       <p class="section-sub">
-        A lista não esgota tudo o que pode ser trazido para a terapia,
-        mas pode ajudar você a se reconhecer em alguns pontos.
+        Essa lista não esgota tudo o que você pode trazer para a análise, 
+        mas criei ela para que você tenha um norte ao acessar esse site, de alguns temas que podemos atravessar.
       </p>
 
       <!-- Card movido do bloco Caminho terapêutico -->
@@ -1544,6 +1625,7 @@
     </section>
 
     <!-- BLOG -->
+    <!--
     <section id="blog">
       <p class="section-kicker reveal-left">Blog</p>
       <h2 class="section-title reveal-left">Textos para seguir pensando</h2>
@@ -1553,7 +1635,7 @@
         pode ser um ponto de encontro com questões importantes da vida emocional.
       </p>
     </section>
-
+    -->
     <!-- DÚVIDAS -->
     <section id="duvidas">
       <div class="duvidas-container">
@@ -1573,7 +1655,8 @@
                   </button>
                   <div class="faq-answer">
                     <p>
-                      Não. Você não precisa chegar pronta, com tudo organizado...
+                      Não, você não precisa chegar pronta; a análise é justamente o lugar onde poderemos construir algo que te dê palavras sobre o que sente e vive.
+                      Você só precisa ser você.
                     </p>
                   </div>
                 </div>
@@ -1584,7 +1667,8 @@
                     <span>Quanto tempo dura o processo?</span>
                   </button>
                   <div class="faq-answer">
-                    <p>Não há um tempo fechado...</p>
+                    <p>Não existe um tempo exato, pois cada pessoa tem o seu processo de forma tão única e singular que seria impossível 
+                      realizar essa travessia psíquica com tempo determinado.</p>
                   </div>
                 </div>
 
@@ -1594,7 +1678,38 @@
                     <span>Como funciona o atendimento on-line?</span>
                   </button>
                   <div class="faq-answer">
-                    <p>O atendimento acontece por videochamada...</p>
+                    <p>O atendimento acontece por videochamada, através do Google Meet.
+                      Eu irei te enviar via WhatsApp um link para acessar a sessão.
+                      Estarei acompanhando sua entrada caso surjam dificuldades.
+                      Você pode fazer com seu celular, computador ou tablet.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="faq-item-wrapper">
+                  <button class="faq-question-btn" type="button">
+                    <span class="faq-icon">+</span>
+                    <span>Quanto tempo duram as sessões?</span>
+                  </button>
+                  <div class="faq-answer">
+                    <p>
+                      As sessões duram 40 minutos e iremos nos encontrar uma vez por semana. 
+                      Porém, isso pode ser conversado para adaptarmos os encontros a cada caso.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="faq-item-wrapper">
+                  <button class="faq-question-btn" type="button">
+                    <span class="faq-icon">+</span>
+                    <span>Quando serão os atendimentos?</span>
+                  </button>
+                  <div class="faq-answer">
+                    <p>
+                      Os atendimentos são feitos com horário e data marcados com antecedência para que eu possa organizar a agenda para te receber com inteireza.
+                      Iremos encontrar um horário que faça sentido pra você.
+                      Os atendimentos são de segunda a sexta-feira.
+                    </p>
                   </div>
                 </div>
 
@@ -1619,37 +1734,46 @@
           </div>
 
         </div>
-      </div>
     </section>
 
     <!-- CONTATO -->
-    <section id="contato">
+    <section id="contato" class="reveal-right">
       <p class="section-kicker">Contato</p>
       <h2 class="section-title">Se você sentiu que algo daqui te toca</h2>
 
       <div class="contato-card">
         <div class="contato-info">
           <p>
-            Se em algum ponto você se reconheceu nas palavras ou temas que aparecem aqui,
-            podemos conversar com calma sobre a possibilidade de acompanhamento.
+            Se em algum ponto você se reconheceu nas palavras ou temas que aparecem aqui, podemos conversar com calma sobre a possibilidade de acompanhamento.
           </p>
           <p>
-            O primeiro contato pode ser apenas para tirar dúvidas e entender melhor como
-            o processo funciona. Você não precisa chegar pronta, só precisa chegar como está.
+            O primeiro contato pode ser apenas para tirar dúvidas e entender melhor como o processo funciona. 
+            Você não precisa chegar pronta, só precisa chegar como está.
           </p>
           <dl class="contato-list">
             <dt>WhatsApp</dt>
-            <dd>
-              <span>📞</span>
-              <span>+55 (16) 99275-2424</span>
-            </dd>
-            <dt>Instagram</dt>
-            <dd>
-              <span>📷</span>
-              <a href="https://www.instagram.com/psiamanda.dualattka" target="_blank" rel="noopener noreferrer">
-                @psiamanda.dualattka
-              </a>
-            </dd>
+<dd>
+  <!-- mesmo ícone do botão "Agende uma consulta" -->
+  <svg aria-hidden="true" class="icon contato-icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+    <path 
+      d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
+    </path>
+  </svg>
+  <span>+55 (16) 99275-2424</span>
+</dd>
+
+<dt>Instagram</dt>
+<dd>
+  <!-- mesmo ícone do botão "Conheça o meu trabalho" -->
+  <a href="https://www.instagram.com/psiamanda.dualattka" target="_blank" rel="noopener noreferrer" class="contato-link">
+    <svg class="icon contato-icon" viewBox="0 0 448 512">
+      <path fill="currentColor"
+        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+    </svg>
+    <span>@psiamanda.dualattka</span>
+  </a>
+</dd>
+
           </dl>
         </div>
         <div class="contato-actions">
@@ -1659,7 +1783,6 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span>💚</span>
             Enviar uma mensagem pelo WhatsApp
           </a>
           <a href="https://www.instagram.com/psiamanda.dualattka" class="btn-secondary" target="_blank" rel="noopener noreferrer">
@@ -1755,5 +1878,20 @@
         });
 
   </script>
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a
+    href="https://wa.me/5516992752424?text=Ol%C3%A1%2C+gostaria+de+saber+um+pouco+mais+sobre+o+atendimento+psicol%C3%B3gico+on-line."
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar comigo no WhatsApp"
+  >
+    <svg aria-hidden="true" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+      ></path>
+    </svg>
+  </a>
+
 </body>
 </html>
