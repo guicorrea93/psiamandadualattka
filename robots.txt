@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://psi.amandadualattka.com.br/sitemap.xml
