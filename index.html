@@ -8,7 +8,7 @@
 
   <!-- SEO & Social -->
   <link rel="canonical" href="https://psi.amandadualattka.com.br/">
-  <meta name="theme-color" content="#166d68">
+  <meta name="theme-color" content="#296B6B">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -73,13 +73,24 @@
       --primary-soft: #e3f0f0;
       --primary-softer: #f3f8f8;
       --primary-dark: #1f5555;
+      --primary-darker: #166d68;
+
+      --whatsapp: #25D366;
+      --whatsapp-hover: #1ebe5d;
+
+      --brown: #7b5a46;
+      --brown-hover: #664a3a;
+      --kicker: #7a8a96;
 
       --bg: #f5f7f7;
       --text: #22333b;
       --muted: #5f6b73;
       --card: #ffffff;
       --border: #d0dde3;
+      --max-width: 1300px;
       --radius-lg: 1.5rem;
+      --radius-pill: 999px;
+      --section-px: 5rem;
       --shadow-soft: 0 18px 35px rgba(32, 58, 67, 0.12);
     }
 
@@ -114,7 +125,7 @@
     }
 
     .page {
-      max-width: 1300px;
+      max-width: var(--max-width);
       margin: 0 auto;
       padding: 1.25rem 0rem 3rem;
     }
@@ -128,7 +139,7 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: #25D366; /* verde clássico do WhatsApp */
+      background: var(--whatsapp);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -139,7 +150,7 @@
     }
 
     .whatsapp-float:hover {
-      background: #1ebe5d;
+      background: var(--whatsapp-hover);
       transform: translateY(-2px);
       box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3);
     }
@@ -185,7 +196,7 @@
     }
 
     .nav-inner {
-      max-width: 1300px;
+      max-width: var(--max-width);
       margin: 0 auto;
       padding: 0.6rem 1.5rem;
       display: flex;
@@ -203,7 +214,7 @@
     .brand-avatar {
       width: 40px;
       height: 40px;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       overflow: hidden;
       border: 2px solid var(--primary-soft);
       background: #fff;
@@ -242,7 +253,7 @@
 
     .nav-links a {
       padding: 0.35rem 0.75rem;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       border: 1px solid transparent;
       transition: all 0.2s ease;
     }
@@ -256,7 +267,7 @@
     .nav-cta {
       font-size: 0.8rem;
       padding: 0.5rem 1rem;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       border: 1px solid var(--primary);
       background: var(--primary);
       color: #f7fafb;
@@ -302,7 +313,7 @@
       border-radius: 0;
       overflow: hidden;
       min-height: 430px;
-      padding: 2.5rem 5rem 3.5rem;
+      padding: 2.5rem var(--section-px) 3.5rem;
     }
 
     .hero-content {
@@ -398,7 +409,7 @@
 
     .btn-primary {
       padding: 0.7rem 1.8rem;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       border: 1px solid var(--primary);
       background: var(--primary);
       color: #f7fafb;
@@ -444,14 +455,14 @@
       width: 100vw;
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
-      padding: 2rem 5rem 3.5rem;
+      padding: 2rem var(--section-px) 3.5rem;
     }
 
     .section-kicker {
       text-transform: uppercase;
       letter-spacing: 0.16em;
       font-size: 1rem;
-      color: #7a8a96;
+      color: var(--kicker);
       margin-bottom: 0.35rem;
     }
 
@@ -548,7 +559,7 @@
       font-size: 0.9rem;
     }
 
-    .temas-btn-wrapper {
+    .tema-btn-wrapper {
       width: 100%;
       display: flex;
       justify-content: center;
@@ -578,7 +589,7 @@
       border: 1px solid #1a9e4c;
       color: white;
       padding: 0.8rem 1.8rem;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       display: inline-flex;
       align-items: center;
       font-size: 0.95rem;
@@ -604,7 +615,7 @@
       border: 1px solid var(--primary);
       color: var(--primary-dark);
       padding: 0.8rem 1.8rem;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       display: inline-flex;
       align-items: center;
       font-size: 0.95rem;
@@ -633,7 +644,7 @@
       width: 100vw;
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
-      padding: 2rem 5rem 3.5rem;
+      padding: 2rem var(--section-px) 3.5rem;
       position: relative;
       background: var(--primary);
     }
@@ -671,11 +682,11 @@
       margin-right: calc(50% - 50vw);
       background: 
         url("fundo_caminho2.webp") repeat,
-        #7b5a46;
+        var(--brown);
       background-size: 300px; /* igual ao sobre mim, ajuste se quiser */
-      padding: 3rem 5rem 4rem;
+      padding: 3rem var(--section-px) 4rem;
       color: #ffffff;
-      position: relative;  
+      position: relative;
     }
 
     /* animação de baixo para cima nesse bloco */
@@ -766,7 +777,7 @@
       background: #1d8f87;
       color: white;
       padding: 0.7rem 2rem;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       display: inline-flex;
       align-items: center;
       gap: 0.7rem;
@@ -777,7 +788,7 @@
     }
 
     .btn-whats:hover {
-      background: #166d68;
+      background: var(--primary-darker);
       transform: translateY(-2px);
       box-shadow: 0 18px 32px rgba(29, 143, 135, 0.35);
     }
@@ -797,7 +808,7 @@
       width: 100vw;
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
-      padding: 0.5rem 5rem 3.5rem;
+      padding: 0.5rem var(--section-px) 3.5rem;
       position: relative;
     }
 
@@ -815,21 +826,21 @@
       color: #ffffff;
     }
 
-    .temas-card {
+    .tema-card {
       border-radius: 1.5rem;
       padding: 1.6rem 1.7rem;
       margin-bottom: 2rem;
-      background: #7b5a46;
+      background: var(--brown);
       color: #fff;
       box-shadow: var(--shadow-soft);
     }
 
-    .temas-card h3 {
+    .tema-card h3 {
       font-size: 1.2rem;
       margin-bottom: 0.8rem;
     }
 
-    .temas-card p {
+    .tema-card p {
       margin-bottom: 0.7rem;
       font-size: 0.95rem;
     }
@@ -840,7 +851,7 @@
       width: 100vw;
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
-      padding: 0.5rem 5rem 3.5rem;
+      padding: 0.5rem var(--section-px) 3.5rem;
       margin-top: 2rem;  /* 🔥 afastamento do bloco Dúvidas */
     }
 
@@ -870,7 +881,7 @@
       font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: #7a8a96;
+      color: var(--kicker);
       margin-top: 0.6rem;
     }
 
@@ -896,7 +907,7 @@
 
     .btn-whatsapp {
       padding: 0.7rem 1.1rem;
-      border-radius: 999px; 
+      border-radius: var(--radius-pill); 
       border: none;
       background: var(--primary);
       border-color: var(--primary-dark);
@@ -913,7 +924,7 @@
 
     .btn-secondary {
       padding: 0.6rem 1rem;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       border: 1px solid rgba(148, 163, 184, 0.6);
       background: #ffffff;
       color: var(--muted);
@@ -986,7 +997,7 @@
 
       .nav-burger {
         display: inline-flex;
-        border-radius: 999px;
+        border-radius: var(--radius-pill);
         border: 1px solid rgba(172, 185, 192, 0.9);
         background: #ffffff;
         padding: 0.3rem 0.7rem;
@@ -1138,10 +1149,10 @@
       margin-right: calc(50% - 50vw);
       background: 
         url("fundo_caminho2.webp") repeat,
-        #7b5a46;
+        var(--brown);
       background-size: 300px;
       color: #ffffff;
-      padding: 3rem 5rem 4rem;
+      padding: 3rem var(--section-px) 4rem;
       position: relative;
     }
 
@@ -1157,7 +1168,7 @@
       width: 100vw;
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
-      padding: 3rem 5rem 4rem;
+      padding: 3rem var(--section-px) 4rem;
       background: var(--primary); /* verdinho de fundo */
     }
 
@@ -1212,7 +1223,7 @@
     .faq-icon {
       width: 22px;
       height: 22px;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       border: 1px solid rgba(148, 163, 184, 0.7);
       display: inline-flex;
       align-items: center;
@@ -1300,11 +1311,11 @@
       color: #ffffff;
     }
 
-    .duvidas-right .whats-btn {
+    .duvidas-right .btn-whats-cta {
       background: #0FA98F;
       color: white;
       padding: 1rem 1.8rem;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
@@ -1313,12 +1324,12 @@
       transition: 0.2s ease;
     }
 
-    .duvidas-right .whats-btn:hover {
+    .duvidas-right .btn-whats-cta:hover {
       background: #0c8f78;
       transform: translateY(-2px);
     }
 
-    .whats-btn svg {
+    .btn-whats-cta svg {
       width: 24px;
       height: 24px;
       fill: white;
@@ -1353,7 +1364,7 @@
     <div class="nav-inner">
       <div class="brand">
         <div class="brand-avatar">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format%3Dauto%2Cw%3D375%2Ch%3D437%2Cfit%3Dcrop/AE07nznKKEtn3JQX/whatsapp-image-2025-10-08-at-20.34.25-m6L275ywR8uD6O9q.jpeg" alt="Amanda Dualattka" />
+          <img src="amanda-avatar.webp" alt="Amanda Dualattka" />
         </div>
         <div class="brand-text">
           <span class="brand-name">Amanda Dualattka</span>
@@ -1512,7 +1523,7 @@
         </div>
 
         <div class="sobre-photo reveal-left">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format%3Dauto%2Cw%3D768%2Ch%3D1065%2Cfit%3Dcrop/AE07nznKKEtn3JQX/whatsapp-image-2025-10-08-at-20.34.25-m6L275ywR8uD6O9q.jpeg" alt="Amanda Dualattka entre livros" />
+          <img src="amanda-perfil.webp" alt="Amanda Dualattka entre livros" />
         </div>
       </div>
     </section>
@@ -1621,7 +1632,7 @@
       </p>
 
       <!-- Card movido do bloco Caminho terapêutico -->
-      <div class="temas-card">
+      <div class="tema-card">
         <h3>Temas que atravessam a clínica</h3>
         <p>
           No dia a dia com mulheres, aparecem questões ligadas a relacionamentos,
@@ -1728,11 +1739,11 @@
               <div class="faq-list">
 
                 <div class="faq-item-wrapper">
-                  <button class="faq-question-btn" type="button">
+                  <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="faq-1">
                     <span class="faq-icon">+</span>
                     <span>Preciso saber exatamente o que dizer na primeira sessão?</span>
                   </button>
-                  <div class="faq-answer">
+                  <div class="faq-answer" id="faq-1" role="region">
                     <p>
                       Não, você não precisa chegar pronta; a análise é justamente o lugar onde poderemos construir algo que te dê palavras sobre o que sente e vive.
                       Você só precisa ser você.
@@ -1741,22 +1752,22 @@
                 </div>
 
                 <div class="faq-item-wrapper">
-                  <button class="faq-question-btn" type="button">
+                  <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="faq-2">
                     <span class="faq-icon">+</span>
                     <span>Quanto tempo dura o processo?</span>
                   </button>
-                  <div class="faq-answer">
-                    <p>Não existe um tempo exato, pois cada pessoa tem o seu processo de forma tão única e singular que seria impossível 
+                  <div class="faq-answer" id="faq-2" role="region">
+                    <p>Não existe um tempo exato, pois cada pessoa tem o seu processo de forma tão única e singular que seria impossível
                       realizar essa travessia psíquica com tempo determinado.</p>
                   </div>
                 </div>
 
                 <div class="faq-item-wrapper">
-                  <button class="faq-question-btn" type="button">
+                  <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="faq-3">
                     <span class="faq-icon">+</span>
                     <span>Como funciona o atendimento on-line?</span>
                   </button>
-                  <div class="faq-answer">
+                  <div class="faq-answer" id="faq-3" role="region">
                     <p>O atendimento acontece por videochamada, através do Google Meet.
                       Eu irei te enviar via WhatsApp um link para acessar a sessão.
                       Estarei acompanhando sua entrada caso surjam dificuldades.
@@ -1766,24 +1777,24 @@
                 </div>
 
                 <div class="faq-item-wrapper">
-                  <button class="faq-question-btn" type="button">
+                  <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="faq-4">
                     <span class="faq-icon">+</span>
                     <span>Quanto tempo duram as sessões?</span>
                   </button>
-                  <div class="faq-answer">
+                  <div class="faq-answer" id="faq-4" role="region">
                     <p>
-                      As sessões duram 40 minutos e iremos nos encontrar uma vez por semana. 
+                      As sessões duram 40 minutos e iremos nos encontrar uma vez por semana.
                       Porém, isso pode ser conversado para adaptarmos os encontros a cada caso.
                     </p>
                   </div>
                 </div>
 
                 <div class="faq-item-wrapper">
-                  <button class="faq-question-btn" type="button">
+                  <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="faq-5">
                     <span class="faq-icon">+</span>
                     <span>Quando serão os atendimentos?</span>
                   </button>
-                  <div class="faq-answer">
+                  <div class="faq-answer" id="faq-5" role="region">
                     <p>
                       Os atendimentos são feitos com horário e data marcados com antecedência para que eu possa organizar a agenda para te receber com inteireza.
                       Iremos encontrar um horário que faça sentido pra você.
@@ -1805,7 +1816,7 @@
               href="https://wa.me/5516992752424?text=Ol%C3%A1%2C+gostaria+de+saber+um+pouco+mais+sobre+a+terapia." 
               target="_blank"
               rel="noopener noreferrer" 
-              class="btn-whats"
+              class="btn-whats-cta"
               data-ga-click="whatsapp"
               data-ga-location="duvidas"
             >
@@ -2006,7 +2017,7 @@
 
     });
 
-        // FAQ (Dúvidas) - abre/fecha respostas
+        // FAQ (Dúvidas) - abre/fecha respostas com acessibilidade
         const faqButtons = document.querySelectorAll(".faq-question-btn");
 
         faqButtons.forEach((btn) => {
@@ -2016,6 +2027,7 @@
             // fecha tudo
             faqButtons.forEach((b) => {
               b.classList.remove("open");
+              b.setAttribute("aria-expanded", "false");
               const ans = b.nextElementSibling;
               if (ans && ans.classList.contains("faq-answer")) {
                 ans.classList.remove("open");
@@ -2028,6 +2040,7 @@
             // se o clicado não estava aberto, abre
             if (!alreadyOpen) {
               btn.classList.add("open");
+              btn.setAttribute("aria-expanded", "true");
               const answer = btn.nextElementSibling;
               if (answer && answer.classList.contains("faq-answer")) {
                 answer.classList.add("open");
@@ -2036,7 +2049,14 @@
                 if (icon) icon.textContent = "–";
               }
             }
-          }); 
+          });
+        });
+
+        // Recalcula altura das respostas abertas ao redimensionar
+        window.addEventListener("resize", () => {
+          document.querySelectorAll(".faq-answer.open").forEach((ans) => {
+            ans.style.maxHeight = ans.scrollHeight + "px";
+          });
         });
 
   </script>
