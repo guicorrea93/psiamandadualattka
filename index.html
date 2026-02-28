@@ -16,6 +16,9 @@
   <meta property="og:title" content="Psicóloga Online | Terapia para Mulheres | Amanda Dualattka">
   <meta property="og:description" content="Atendimento psicológico online voltado à saúde emocional da mulher. Um espaço de escuta, cuidado e reflexão.">
   <meta property="og:image" content="https://psi.amandadualattka.com.br/amanda-hero.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/webp">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Psi Amanda Dualattka">
 
@@ -35,10 +38,15 @@
     gtag('config', 'G-N88TZLFZXE');
   </script>
 
+  <!-- DNS prefetch -->
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+
   <!-- Fonte -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <script type="application/ld+json">
     {
@@ -90,12 +98,14 @@
     </symbol>
   </svg>
 
+  <a href="#page" class="skip-link">Pular para o conteúdo principal</a>
+
   <!-- NAVBAR -->
   <nav class="nav">
     <div class="nav-inner">
       <div class="brand">
         <div class="brand-avatar">
-          <img src="amanda-avatar.webp" alt="Amanda Dualattka" />
+          <img src="amanda-avatar.webp" alt="Amanda Dualattka" width="40" height="40" />
         </div>
         <div class="brand-text">
           <span class="brand-name">Amanda Dualattka</span>
@@ -115,7 +125,7 @@
       </div>
 
       <!-- Botão mobile -->
-      <button class="nav-burger" type="button" id="burger">
+      <button class="nav-burger" type="button" id="burger" aria-label="Abrir menu de navegação" aria-controls="mobileMenu">
         ☰ Menu
       </button>
 
@@ -176,7 +186,7 @@
     </div>
   </section>
 
-  <main class="page">
+  <main id="page" class="page">
     <!-- SOBRE MIM -->
     <section id="sobre">
       <h2 class="section-kicker reveal-left">Sobre mim</h2>
@@ -248,14 +258,14 @@
         </div>
 
         <div class="sobre-photo reveal-left">
-          <img src="amanda-perfil.webp" alt="Amanda Dualattka entre livros" />
+          <img src="amanda-perfil.webp" alt="Amanda Dualattka entre livros" width="500" height="600" loading="lazy" />
         </div>
       </div>
     </section>
     
     <!-- MINHA ABORDAGEM -->
     <section id="minha-abordagem">
-      <h2 class="section-kicker reveal-left">Minha abordagem</h2>
+      <p class="section-kicker reveal-left">Minha abordagem</p>
       <h2 class="section-title reveal-left">Psicanálise como caminho de cuidado</h2>
       <p class="section-sub reveal-left">
         Trabalho com os olhos da psicanálise, entendendo que cada história é única e não cabe em respostas prontas. 
@@ -291,7 +301,7 @@
 
     <!-- CAMINHO TERAPÊUTICO -->
     <section id="caminho-terapeutico" class="reveal-up">
-      <h2 class="section-kicker">Caminho terapêutico</h2>
+      <p class="section-kicker">Caminho terapêutico</p>
       <h2 class="section-title">Como posso te acompanhar nesse processo:</h2>
       <p class="section-sub">
         Muitas vezes, somos atravessadas por incertezas, dores, vazios e angústias que ultrapassam nosso entendimento sobre nós mesmas e sobre o sentido da existência.
@@ -306,7 +316,7 @@
 
       <div class="caminho-grid">
         <div class="caminho-photo">
-          <img src="amanda_caminho.webp" alt="Psicóloga Amanda Dualattka caminhando em ambiente ao ar livre, simbolizando jornada emocional">
+          <img src="amanda_caminho.webp" alt="Psicóloga Amanda Dualattka caminhando em ambiente ao ar livre, simbolizando jornada emocional" width="500" height="600" loading="lazy">
         </div>
 
         <div class="caminho-text">
@@ -343,7 +353,7 @@
 
     <!-- TEMAS -->
     <section id="temas" class="reveal-right">
-      <h2 class="section-kicker">Alguns temas de trabalho</h2>
+      <p class="section-kicker">Alguns temas de trabalho</p>
       <h2 class="section-title">Questões que podem aparecer por aqui</h2>
       <p class="section-sub">
         Essa lista não esgota tudo o que você pode trazer para a análise, 
@@ -371,6 +381,7 @@
             src="tema-relacionamentos.webp"
             alt="Ícone de relacionamentos"
             class="tema-item-icon"
+            width="80" height="80" loading="lazy"
           >
           <strong>Relacionamentos e vínculos</strong>
           Dinâmicas afetivas, dificuldade de colocar limites,
@@ -381,6 +392,7 @@
             src="tema-autoestima.webp"
             alt="Ícone de autoestima"
             class="tema-item-icon"
+            width="80" height="80" loading="lazy"
           >
           <strong>Autoestima e autopercepção</strong>
           Sentimentos de inadequação, autoexigência, comparação constante,
@@ -391,6 +403,7 @@
             src="tema-ansiedade.webp"
             alt="Ícone de ansiedade"
             class="tema-item-icon"
+            width="80" height="80" loading="lazy"
           >
           <strong>Ansiedade, angústia e vazio</strong>
           Preocupações intensas, sensação de estar sempre devendo algo,
@@ -401,6 +414,7 @@
             src="tema-luto.webp"
             alt="Ícone de luto"
             class="tema-item-icon"
+            width="80" height="80" loading="lazy"
           >
           <strong>Luto e perdas</strong>
           Encerramentos de ciclos, mudanças importantes,
@@ -411,6 +425,7 @@
             src="tema-infancia.webp"
             alt="Ícone de infância"
             class="tema-item-icon"
+            width="80" height="80" loading="lazy"
           >
           <strong>Infância e família</strong>
           Histórias de infância emocionalmente negligenciada,
@@ -421,6 +436,7 @@
             src="tema-carreira.webp"
             alt="Ícone de carreira"
             class="tema-item-icon"
+            width="80" height="80" loading="lazy"
           >
           <strong>Carreira e projetos de vida</strong>
           Dúvidas sobre caminhos profissionais, sensação de estar perdida,
@@ -449,7 +465,7 @@
           <!-- COLUNA DA ESQUERDA -->
           <div class="duvidas-left">
             <div class="faq-wrapper reveal">
-              <h2 class="section-kicker">Dúvidas frequentes</h2>
+              <p class="section-kicker">Dúvidas frequentes</p>
               <h2 class="section-title">Perguntas que podem surgir antes de começar</h2>
 
               <div class="faq-list">
@@ -546,7 +562,7 @@
 
     <!-- CONTATO -->
     <section id="contato" class="reveal-right">
-      <h2 class="section-kicker">Contato</h2>
+      <p class="section-kicker">Contato</p>
       <h2 class="section-title">Se você sentiu que algo daqui te toca</h2>
 
       <div class="contato-card">
@@ -621,7 +637,7 @@
     </section>
 
     <footer>
-      <span>© 2025 Amanda Dualattka · Psicóloga e Psicanalista · CRP 06/215804</span>
+      <span>© <span id="year">2025</span> Amanda Dualattka · Psicóloga e Psicanalista · CRP 06/215804</span>
       <span>Atendimento on-line voltado ao cuidado da mulher.</span>
     </footer>
   </main>

@@ -14,7 +14,7 @@
 
   --bg: #f5f7f7;
   --text: #22333b;
-  --muted: #5f6b73;
+  --muted: #4a5a63;
   --card: #ffffff;
   --border: #d0dde3;
   --max-width: 1300px;
@@ -194,27 +194,6 @@ img {
   background: var(--primary-softer);
 }
 
-.nav-cta {
-  font-size: 0.8rem;
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--primary);
-  background: var(--primary);
-  color: #f7fafb;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
-  box-shadow: 0 10px 20px rgba(41, 107, 107, 0.25);
-  white-space: nowrap;
-}
-
-.nav-cta:hover {
-  background: var(--primary-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 16px 28px rgba(41, 107, 107, 0.32);
-}
-
 .nav-burger {
   display: none;
 }
@@ -365,7 +344,6 @@ img {
 #minha-abordagem,
 #caminho-terapeutico,
 #temas,
-#blog,
 #duvidas,
 #contato {
   margin-bottom: 0;
@@ -921,10 +899,6 @@ footer {
     display: none;
   }
 
-  .nav-cta {
-    display: none;
-  }
-
   .nav-burger {
     display: inline-flex;
     border-radius: var(--radius-pill);
@@ -1066,26 +1040,6 @@ footer {
     padding: 1.2rem 1rem;       /* card mais "esticado" */
   }
 
-}
-
-/* ====== BLOG (fundo marrom) ====== */
-#blog {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  background:
-    url("fundo_caminho2.webp") repeat,
-    var(--brown);
-  background-size: 300px;
-  color: #ffffff;
-  padding: 3rem var(--section-px) 4rem;
-  position: relative;
-}
-
-#blog .section-kicker,
-#blog .section-title,
-#blog .section-sub {
-  color: #ffffff;
 }
 
 /* ============ DÚVIDAS (FAQ) ============ */
@@ -1277,4 +1231,39 @@ footer {
 .contato-list svg.contato-icon {
   position: relative;
   top: 25px;
+}
+
+/* ============ SKIP LINK ============ */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 0 0 0.5rem 0.5rem;
+  z-index: 9999;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ============ FOCUS INDICATORS ============ */
+.nav-links a:focus-visible,
+.nav-links-mobile a:focus-visible,
+.btn-primary:focus-visible,
+.btn-whats-full:focus-visible,
+.btn-instagram-full:focus-visible,
+.btn-whats:focus-visible,
+.btn-whats-cta:focus-visible,
+.btn-whatsapp:focus-visible,
+.btn-secondary:focus-visible,
+.faq-question-btn:focus-visible,
+.whatsapp-float:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }

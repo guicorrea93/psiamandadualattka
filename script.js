@@ -59,7 +59,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  window.addEventListener("scroll", revealOnScroll);
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        revealOnScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
   revealOnScroll();
 
   // ---- GA4: cliques em WhatsApp ----
@@ -142,3 +151,7 @@ window.addEventListener("resize", () => {
     ans.style.maxHeight = ans.scrollHeight + "px";
   });
 });
+
+// Copyright dinâmico
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
