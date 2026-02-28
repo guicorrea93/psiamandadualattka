@@ -1482,6 +1482,7 @@
               href="https://wa.me/5516992752424?text=Ol%C3%A1%2C+gostaria+de+saber+um+pouco+mais+sobre+a+terapia."
               class="btn-whats-full"
               target="_blank"
+              rel="noopener noreferrer"
               data-ga-click="whatsapp"
               data-ga-location="sobre"
             >
@@ -1593,7 +1594,8 @@
           <div class="caminho-btn-wrapper">
             <a 
               href="https://wa.me/5516992752424?text=Ol%C3%A1%2C+gostaria+de+saber+um+pouco+mais+sobre+a+terapia." 
-              target="_blank" 
+              target="_blank"
+              rel="noopener noreferrer" 
               class="btn-whats"
               data-ga-click="whatsapp"
               data-ga-location="caminho_terapeutico"
@@ -1698,7 +1700,8 @@
       <div class="caminho-btn-wrapper">
         <a 
           href="https://wa.me/5516992752424?text=Ol%C3%A1%2C+gostaria+de+saber+um+pouco+mais+sobre+a+terapia." 
-          target="_blank" 
+          target="_blank"
+              rel="noopener noreferrer" 
           class="btn-whats"
           data-ga-click="whatsapp"
           data-ga-location="temas"
@@ -1800,7 +1803,8 @@
 
             <a 
               href="https://wa.me/5516992752424?text=Ol%C3%A1%2C+gostaria+de+saber+um+pouco+mais+sobre+a+terapia." 
-              target="_blank" 
+              target="_blank"
+              rel="noopener noreferrer" 
               class="btn-whats"
               data-ga-click="whatsapp"
               data-ga-location="duvidas"
@@ -1899,6 +1903,21 @@
   </main>
 
   <script>
+    // ===== CONFIGURAÇÃO CENTRAL =====
+    const WHATSAPP_NUMBER = "5516992752424";
+    const WHATSAPP_MESSAGE = "Ol%C3%A1%2C+gostaria+de+saber+um+pouco+mais+sobre+a+terapia.";
+    const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
+
+    // Aplica URL centralizada em todos os links de WhatsApp
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+        link.href = WHATSAPP_URL;
+        if (!link.getAttribute("rel")) {
+          link.setAttribute("rel", "noopener noreferrer");
+        }
+      });
+    });
+
     // ===== GA4 – função auxiliar =====
     function sendGAEvent(eventName, params) {
       if (typeof gtag === "function") {
