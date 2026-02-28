@@ -704,7 +704,7 @@ section {
 
 /* botão igual o do hero */
 .btn-whats {
-  background: #1d8f87;
+  background: var(--primary);
   color: white;
   padding: 0.8rem 1.8rem;
   border-radius: var(--radius-pill);
@@ -1026,10 +1026,6 @@ footer {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .banner-borboletas img {
-    height: 160px;
-  }
-
   #caminho-terapeutico {
     padding: 2.4rem 1.5rem 3rem;
   }
@@ -1046,7 +1042,7 @@ footer {
     padding: 2rem 1.5rem 3rem;
   }
 
-  .abordagem-btn-wrapper {
+  .caminho-btn-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -1278,7 +1274,7 @@ footer {
 }
 
 /* Ajuste fino do alinhamento do ícone do Instagram no bloco Contato */
-.contato-list svg.icon-instagram {
+.contato-list svg.contato-icon {
   position: relative;
-  top: 25px;   /* ajuste de alinhamento vertical – pode aumentar p/ 3 se quiser */
+  top: 25px;
 }
