@@ -97,62 +97,6 @@
     }
     body { background: var(--bg); color: var(--text); }
 
-    .privacy-section {
-      width: 100vw;
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
-      padding: 3rem var(--section-px) 3.5rem;
-      background: #ffffff;
-      border-top: 1px solid var(--border);
-    }
-
-    .privacy-box {
-      max-width: 980px;
-      margin: 0 auto;
-      border: 1px solid var(--border);
-      border-radius: 1.2rem;
-      padding: 1.6rem 1.7rem;
-      background: linear-gradient(135deg, #ffffff, #f3f8f8);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .privacy-box h2 {
-      font-size: 1.45rem;
-      color: var(--primary-dark);
-      margin-bottom: 0.8rem;
-    }
-
-    .privacy-box h3 {
-      font-size: 1rem;
-      color: var(--primary-dark);
-      margin: 1.2rem 0 0.35rem;
-    }
-
-    .privacy-box p,
-    .privacy-box li {
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-
-    .privacy-box ul {
-      padding-left: 1.2rem;
-      margin-top: 0.4rem;
-    }
-
-    .privacy-box a {
-      color: var(--primary-dark);
-      font-weight: 600;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .privacy-footer-link {
-      color: var(--primary-dark);
-      font-weight: 600;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
     .cookie-notice {
       position: fixed;
       left: 1.25rem;
@@ -179,15 +123,14 @@
       margin: 0;
     }
 
-    .cookie-notice a {
-      color: var(--primary-dark);
-      font-weight: 600;
-      text-decoration: underline;
-      text-underline-offset: 3px;
+    .cookie-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      flex-shrink: 0;
     }
 
     .cookie-notice button {
-      flex-shrink: 0;
       border: 0;
       border-radius: var(--radius-pill);
       padding: 0.65rem 1.1rem;
@@ -198,15 +141,89 @@
       cursor: pointer;
     }
 
+    .cookie-notice .btn-privacy {
+      border: 1px solid rgba(41, 107, 107, 0.28);
+      background: #ffffff;
+      color: var(--primary-dark);
+    }
+
+    .privacy-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      background: rgba(22, 38, 44, 0.48);
+      backdrop-filter: blur(8px);
+    }
+
+    .privacy-modal[hidden] {
+      display: none;
+    }
+
+    .privacy-modal-card {
+      position: relative;
+      width: min(920px, 100%);
+      max-height: min(82vh, 760px);
+      overflow-y: auto;
+      border: 1px solid var(--border);
+      border-radius: 1.2rem;
+      padding: 1.6rem 1.7rem;
+      background: linear-gradient(135deg, #ffffff, #f3f8f8);
+      box-shadow: 0 24px 70px rgba(22, 38, 44, 0.28);
+    }
+
+    .privacy-modal-close {
+      position: sticky;
+      top: 0;
+      float: right;
+      width: 36px;
+      height: 36px;
+      margin: -0.4rem -0.4rem 0.4rem 1rem;
+      border: 1px solid rgba(41, 107, 107, 0.22);
+      border-radius: var(--radius-pill);
+      background: #ffffff;
+      color: var(--primary-dark);
+      font: inherit;
+      font-size: 1.15rem;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(32, 58, 67, 0.12);
+    }
+
+    .privacy-modal-card h2 {
+      font-size: 1.45rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.8rem;
+    }
+
+    .privacy-modal-card h3 {
+      font-size: 1rem;
+      color: var(--primary-dark);
+      margin: 1.2rem 0 0.35rem;
+    }
+
+    .privacy-modal-card p,
+    .privacy-modal-card li {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .privacy-modal-card ul {
+      padding-left: 1.2rem;
+      margin-top: 0.4rem;
+    }
+
+    .privacy-modal-card a {
+      color: var(--primary-dark);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     @media (max-width: 768px) {
-      .privacy-section {
-        padding: 2.5rem 1.25rem 3rem;
-      }
-
-      .privacy-box {
-        padding: 1.35rem 1.2rem;
-      }
-
       .cookie-notice {
         left: 0.85rem;
         right: 0.85rem;
@@ -215,8 +232,21 @@
         align-items: flex-start;
       }
 
+      .cookie-actions {
+        width: 100%;
+      }
+
       .cookie-notice button {
         width: 100%;
+      }
+
+      .privacy-modal {
+        padding: 0.85rem;
+      }
+
+      .privacy-modal-card {
+        max-height: 86vh;
+        padding: 1.35rem 1.2rem;
       }
     }
   </style>
@@ -256,7 +286,6 @@
         <a href="#temas">Temas</a>
         <a href="#duvidas">Dúvidas</a>
         <a href="#contato">Contato</a>
-        <a href="#privacidade">Privacidade</a>
       </div>
 
       <!-- Botão mobile -->
@@ -276,7 +305,6 @@
       <a href="#temas">Temas</a>
       <a href="#duvidas">Dúvidas</a>
       <a href="#contato">Contato</a>
-      <a href="#privacidade">Privacidade</a>
     </div>
   </nav>
 
@@ -770,49 +798,9 @@
       </div>
     </section>
 
-    <!-- POLÍTICA DE PRIVACIDADE -->
-    <section id="privacidade" class="privacy-section">
-      <div class="privacy-box">
-        <p class="section-kicker">Privacidade</p>
-        <h2>Como usamos dados de navegação</h2>
-        <p>
-          Este site usa ferramentas de análise, como Google Analytics e Microsoft Clarity, para entender de forma geral como as pessoas chegam, navegam e interagem com as páginas.
-          Essas informações ajudam a melhorar a experiência, a clareza das informações e o desempenho dos anúncios.
-        </p>
-
-        <h3>O que pode ser coletado</h3>
-        <ul>
-          <li>páginas acessadas, origem da visita e tempo aproximado de navegação;</li>
-          <li>cliques, rolagem da página e interações gerais com botões e links;</li>
-          <li>informações técnicas do dispositivo, navegador e localização aproximada.</li>
-        </ul>
-
-        <h3>O que não coletamos por aqui</h3>
-        <p>
-          Este site não possui formulário de atendimento, prontuário, área de login ou coleta direta de informações clínicas.
-          O primeiro contato acontece pelo WhatsApp ou Instagram, em plataformas externas.
-        </p>
-
-        <h3>Microsoft Clarity</h3>
-        <p>
-          O Microsoft Clarity pode gerar mapas de calor e gravações de sessão para mostrar padrões de navegação.
-          Por padrão, conteúdos sensíveis são mascarados. Mesmo assim, os dados são usados apenas para análise de experiência e melhoria do site.
-        </p>
-
-        <h3>Contato</h3>
-        <p>
-          Em caso de dúvidas sobre privacidade, entre em contato pelo WhatsApp:
-          <a href="https://wa.me/5516992752424" target="_blank" rel="noopener noreferrer">+55 (16) 99275-2424</a>.
-        </p>
-      </div>
-    </section>
-
     <footer>
       <span>© <span id="year">2025</span> Amanda Dualattka · Psicóloga e Psicanalista · CRP 06/215804</span>
-      <span>
-        Atendimento on-line voltado ao cuidado da mulher.
-        <a class="privacy-footer-link" href="#privacidade">Política de Privacidade</a>
-      </span>
+      <span>Atendimento on-line voltado ao cuidado da mulher.</span>
     </footer>
   </main>
 
@@ -833,14 +821,66 @@
   <div class="cookie-notice" id="cookieNotice">
     <p>
       Usamos cookies e ferramentas de análise, como Google Analytics e Microsoft Clarity, para melhorar sua experiência e entender a navegação no site.
-      <a href="#privacidade">Ver política de privacidade</a>
     </p>
-    <button type="button" id="cookieAccept">Entendi</button>
+    <div class="cookie-actions">
+      <button type="button" class="btn-privacy" id="privacyOpen">Ver termos</button>
+      <button type="button" id="cookieAccept">Entendi</button>
+    </div>
+  </div>
+
+  <div class="privacy-modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle" hidden>
+    <div class="privacy-modal-card">
+      <button type="button" class="privacy-modal-close" id="privacyClose" aria-label="Fechar termos de privacidade">×</button>
+      <p class="section-kicker">Privacidade</p>
+      <h2 id="privacyTitle">Como usamos dados de navegação</h2>
+      <p>
+        Este site usa ferramentas de análise, como Google Analytics e Microsoft Clarity, para entender de forma geral como as pessoas chegam, navegam e interagem com as páginas.
+        Essas informações ajudam a melhorar a experiência, a clareza das informações e o desempenho dos anúncios.
+      </p>
+
+      <h3>O que pode ser coletado</h3>
+      <ul>
+        <li>páginas acessadas, origem da visita e tempo aproximado de navegação;</li>
+        <li>cliques, rolagem da página e interações gerais com botões e links;</li>
+        <li>informações técnicas do dispositivo, navegador e localização aproximada.</li>
+      </ul>
+
+      <h3>O que não coletamos por aqui</h3>
+      <p>
+        Este site não possui formulário de atendimento, prontuário, área de login ou coleta direta de informações clínicas.
+        O primeiro contato acontece pelo WhatsApp ou Instagram, em plataformas externas.
+      </p>
+
+      <h3>Microsoft Clarity</h3>
+      <p>
+        O Microsoft Clarity pode gerar mapas de calor e gravações de sessão para mostrar padrões de navegação.
+        Por padrão, conteúdos sensíveis são mascarados. Mesmo assim, os dados são usados apenas para análise de experiência e melhoria do site.
+      </p>
+
+      <h3>Contato</h3>
+      <p>
+        Em caso de dúvidas sobre privacidade, entre em contato pelo WhatsApp:
+        <a href="https://wa.me/5516992752424" target="_blank" rel="noopener noreferrer">+55 (16) 99275-2424</a>.
+      </p>
+    </div>
   </div>
 
   <script>
     const cookieNotice = document.getElementById("cookieNotice");
     const cookieAccept = document.getElementById("cookieAccept");
+    const privacyOpen = document.getElementById("privacyOpen");
+    const privacyClose = document.getElementById("privacyClose");
+    const privacyModal = document.getElementById("privacyModal");
+
+    function openPrivacyModal() {
+      privacyModal?.removeAttribute("hidden");
+      privacyClose?.focus();
+    }
+
+    function closePrivacyModal() {
+      privacyModal?.setAttribute("hidden", "");
+      privacyOpen?.focus();
+    }
 
     if (localStorage.getItem("privacyNoticeAccepted") === "true") {
       cookieNotice?.remove();
@@ -849,6 +889,19 @@
     cookieAccept?.addEventListener("click", () => {
       localStorage.setItem("privacyNoticeAccepted", "true");
       cookieNotice?.remove();
+    });
+
+    privacyOpen?.addEventListener("click", openPrivacyModal);
+    privacyClose?.addEventListener("click", closePrivacyModal);
+
+    privacyModal?.addEventListener("click", (event) => {
+      if (event.target === privacyModal) closePrivacyModal();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !privacyModal?.hasAttribute("hidden")) {
+        closePrivacyModal();
+      }
     });
   </script>
 
