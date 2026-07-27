@@ -57,7 +57,7 @@ img {
 .page {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1.25rem 0rem 3rem;
+  padding: 0 0rem 3rem;
 }
 
 /* ============ BOTÃO FLUTUANTE WHATSAPP ============ */
@@ -239,10 +239,23 @@ img {
 
 .hero-content {
   max-width: 520px;
-  padding: 1.5rem 1.75rem 2rem;
-  border-radius: 1.2rem;
-  background: rgba(0, 0, 0, 0.35);
   color: #fff;
+}
+
+.hero-intro,
+.hero-details {
+  padding: 1.5rem 1.75rem;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hero-intro {
+  border-radius: 1.2rem 1.2rem 0 0;
+  padding-bottom: 0.4rem;
+}
+
+.hero-details {
+  border-radius: 0 0 1.2rem 1.2rem;
+  padding-top: 0.4rem;
 }
 
 @keyframes heroSlideIn {
@@ -320,7 +333,7 @@ img {
 .hero-actions {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.8rem;
   opacity: 0;
   transform: translateX(-40px);
@@ -976,53 +989,108 @@ footer {
   }
 
   .page {
-    padding-inline: 1.25rem;
+    padding: 0 1.25rem 3rem;
   }
 
   .hero {
-    padding: 4.5rem 1.2rem 2.4rem;
-    min-height: 520px;
+    align-items: stretch;
+    padding: 0.45rem 1rem 2rem;
+    min-height: 650px;
     background-image: url("amanda_cadeira.webp"); /* HERO MOBILE DIFERENTE */
-    background-position: center;
+    background-position: center top;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.28);
+    pointer-events: none;
   }
 
   .hero-content {
-    /*background: transparent;
-    padding: 0;*/
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 100%;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    justify-content: space-between;
+    gap: 1.8rem;
+    min-height: 590px;
+  }
+
+  .hero-intro,
+  .hero-details {
+    border-radius: 1rem;
+    background: rgba(20, 18, 16, 0.32);
+    box-shadow: 0 14px 34px rgba(20, 18, 16, 0.16);
+  }
+
+  .hero-intro {
+    margin-top: 0;
+    padding: 1.05rem 0.15rem 1rem;
+    background: transparent;
+    box-shadow: none;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.62);
+  }
+
+  .hero-details {
+    margin-bottom: 0.5rem;
+    padding: 0.95rem 0.15rem 1.1rem;
+    background: transparent;
+    box-shadow: none;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.66);
   }
 
   .hero-title {
-    font-size: 2.1rem;
+    font-size: 2.12rem;
     margin-bottom: 0.2rem;
+    color: #ffffff;
   }
 
   .hero-subtitle-main {
-    font-size: 1rem;
+    font-size: 1.06rem;
   }
 
   .hero-subtitle-extra {
-    font-size: 0.9rem;  /* texto menor no mobile */
+    font-size: 0.94rem;  /* texto menor no mobile */
+    margin-bottom: 0.85rem;
   }
 
   .hero-meta {
-    font-size: 0.8rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    font-size: 0.86rem;
+    gap: 0.55rem 0.8rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .hero-meta > span:last-child {
+    grid-column: 1 / -1;
   }
 
   .hero-meta-label {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
+    color: #e2e8f0;
+  }
+
+  .hero-meta-value {
+    color: #ffffff;
   }
 
   .hero-actions {
-    margin-top: 0.8rem;
+    align-items: center;
+    margin-top: 0;
   }
 
   .btn-primary {
-    white-space: nowrap;
-    font-size: 1rem;
-    padding: 0.9rem 0.5rem;
+    white-space: normal;
+    text-align: center;
+    justify-content: center;
+    font-size: 0.96rem;
+    padding: 0.85rem 1rem;
   }
 
   /* SOBRE AÇÕES – botões empilhados no mobile */
@@ -1294,7 +1362,7 @@ footer {
 }
 
 .skip-link:focus {
-  top: 0;
+  top: -100%;
 }
 
 /* ============ FOCUS INDICATORS ============ */
