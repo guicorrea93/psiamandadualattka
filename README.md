@@ -13,7 +13,8 @@ e informacoes de contato.
 | `CNAME` | Dominio customizado do GitHub Pages. |
 | `robots.txt` | Orientacao para crawlers. |
 | `sitemap.xml` | Mapa do site para indexacao. |
-| `favicon.svg` | Icone do site. |
+| `favicon.png` | Icone do site. |
+| `ads/` | Imagens usadas nas campanhas do Google Ads. |
 
 ## Assets
 
@@ -25,6 +26,9 @@ O projeto usa imagens locais em `.webp`, `.jpg`, `.png` e ondas decorativas em
 - fundos de secoes;
 - imagens de temas como ansiedade, autoestima, carreira, infancia, luto e
   relacionamentos.
+
+As imagens da pasta `ads/` nao sao referenciadas diretamente pelo site. Elas
+sao mantidas no repositorio para uso em campanhas do Google Ads.
 
 ## Como Rodar Localmente
 
@@ -43,4 +47,3 @@ Acesse `http://localhost:8000`.
 - Verifique responsividade em mobile e desktop.
 - Atualize `sitemap.xml` se novas paginas forem adicionadas.
 - Preserve o `CNAME` se o dominio customizado continuar ativo.
-
